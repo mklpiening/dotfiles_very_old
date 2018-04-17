@@ -10,7 +10,7 @@ parse_git_branch () {
 	fi
 }
 
-export PS1="\n\e[33m\u \e[mat \e[35m\h\e[m:\n\e[0;32m\w \e[0;34m\$(parse_git_branch)\e[m> "
+export PS1="\n\[\e[33m\]\u \[\e[mat\] \[\e[35m\]\h\[\e[m\]:\n\[\e[0;32m\]\w \[\e[0;34m\]\$(parse_git_branch)\[\e[m\]> "
 
 export CLICOLOR=1
 export LSCOLORS=ExFxBxDxCxegedabagacad
