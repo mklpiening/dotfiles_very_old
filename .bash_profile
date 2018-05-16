@@ -20,4 +20,6 @@ alias sv01='ssh root@mklpiening.de'
 
 alias ll='ls -l'
 
+alias restartpa='pulseaudio -k & pulseaudio --start'
+
 neofetch
