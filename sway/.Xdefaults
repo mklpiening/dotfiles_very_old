@@ -3,6 +3,7 @@ urxvt.termName: rxvt-unicode
 urxvt.scrollBar: false
 urxvt.background: #282c34
 urxvt.foreground: grey
+URxvt.internalBorder: 40
 
 !! Inconsolata font
 URxvt.font: xft:Inconsolata-11
