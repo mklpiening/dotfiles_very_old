@@ -28,10 +28,12 @@ secondary = #fc6e95
 alert = #fc6e95
 
 [bar/malte]
-monitor = ${env:MONITOR:HDMI-1}
+enable-ipc = true
+
+monitor = ${env:MONITOR:HDMI-A-0}
 override-redirect = true
 width = 50%
-height = 32
+height = 36
 offset-x = 25%
 offset-y = 0.5%
 radius = 0.0
@@ -66,7 +68,7 @@ tray-padding = 2
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
-;wm-restack = i3
+wm-restack = i3
 
 ;override-redirect = true
 
@@ -314,14 +316,14 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = "%d. %m. %Y  "
+date-alt = "%d.%m.%Y  "
 
 time = %H:%M
 time-alt = %H:%M:%S
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = #8dc5e6
+format-underline = #000000
 
 label = %date% %time%
 
@@ -461,7 +463,52 @@ menu-2-0-exec = sudo poweroff
 menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
+[module/previous]
+type = custom/script
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 5
+; Previous song icon
+exec = echo ""
+format-underline = #1db954
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Previous"
+
+[module/next]
+type = custom/script
+interval = 86400
+format = "%{T3}<label>"
+format-padding = 5
+; Next song icon
+exec = echo ""
+format-underline = #1db954
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.Next"
+
+[module/playpause]
+type = custom/script
+; Default
+hook-0 = echo ""
+; Playing
+hook-1 = echo ""
+; Paused
+hook-2 = echo ""
+initial = 1
+format-underline = #1db954
+line-size = 1
+click-left = "dbus-send --print-reply --dest=org.mpris.MediaPlayer2.spotify /org/mpris/MediaPlayer2 org.mpris.MediaPlayer2.Player.PlayPause"
+
+[module/spotify]
+type = custom/ipc
+hook-0 = echo ""
+hook-1 = python3 ~/scripts/spotify/spotify_status.py
+initial = 1
+format-padding = 4
+format-underline = #1db954
+line-size = 1
+
 [settings]
+enable-ipc = true
 screenchange-reload = true
 ;compositing-background = xor
 ;compositing-background = screen
