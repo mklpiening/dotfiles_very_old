@@ -6,8 +6,8 @@ urxvt.foreground: #ebf8f9
 URxvt.internalBorder: 50
 
 !! Inconsolata font
-URxvt.font: xft:Inconsolata-10
-URxvt.boldFont: xft:Inconsolata-10
+URxvt.font: xft:Inconsolata-10,xft:Inconsolata\ for\ Powerline:pixelsize=10
+URxvt.boldFont: xft:Inconsolata-10,xft:Inconsolata\ for\ Powerline:pixelsize=10
 URxvt.letterSpace: -1
 
 !! Larger history limit
@@ -22,6 +22,9 @@ urxvt.matcher.button: C1
 URxvt.keysym.Control-0x2b: perl:font-size:increase
 URxvt.keysym.Control-0x2d: perl:font-size:decrease
 
+URxvt.iso14755: false
+URxvt.iso14755_52: false
+
 urxvt.keysym.Home:          \033[1~
 urxvt.keysym.End:           \033[4~
 urxvt.keysym.Control-Up:    \033[1;5A
@@ -34,7 +37,7 @@ urxvt.keysym.Shift-Control-C: eval:selection_to_clipboard
 !! Tango color theme
 !! Strange - it matches tango from gnome-terminal, but looks different
 urxvt.color0:       #000000
-urxvt.color8:       #030809
+urxvt.color8:       #39484c
 urxvt.color1:       #f94059
 urxvt.color9:       #fc6e95
 urxvt.color2:       #61cab3
