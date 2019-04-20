@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "rofi"
+    ],
+    "install": [
+        "copy Malte.rasi /usr/share/rofi/themes/Malte.rasi",
+        "copy config ~/.config/rofi/config"
+    ]
+}

@@ -1,0 +1,17 @@
+{
+    "dependencies": [
+        "rxvt-unicode"
+    ],
+    "install": [
+        "copy Xdefaults ~/.Xdefaults",
+        {
+            "question": "Use HiDPI scaling? (yes/no)",
+            "answer": {
+                "yes": [
+                    "append HiDPI_scaling ~/.Xdefaults"
+                ],
+                "no": []
+            }
+        }
+    ]
+}
