@@ -21,6 +21,14 @@
                 "no": []
             }
         },
+        {
+            "question": "Please enter the path to your wallpaper?",
+            "answer": {
+                "{wallpaper}": [
+                    "replace ~/.config/i3/config [WALLPAPER] {wallpaper}"
+                ]
+            }
+        },
         "copy xinitrc ~/.xinitrc"
     ]
 }
