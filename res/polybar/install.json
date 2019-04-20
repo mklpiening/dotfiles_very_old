@@ -1,0 +1,43 @@
+{
+    "dependencies": [
+        "polybar"
+    ],
+    "install": [
+        "copy colors ~/.config/polybar/config",
+        "append bar ~/.config/polybar/config",
+        "append modules ~/.config/polybar/config",
+        "append settings ~/.config/polybar/config",
+        {
+            "question": "What is the name of your main display? (use xrandr to view the names)",
+            "answer": {
+                "{monitor}": [
+                    "replace ~/.config/polybar/config [MONITOR] {monitor}"
+                ]
+            }
+        },
+        {
+            "question": "Use HiDPI scaling? (yes/no)",
+            "answer": {
+                "yes": [
+                    "replace ~/.config/polybar/config [FONTSIZE] 16",
+                    "replace ~/.config/polybar/config [HEIGHT] 56"
+                ],
+                "no": [
+                    "replace ~/.config/polybar/config [FONTSIZE] 10",
+                    "replace ~/.config/polybar/config [HEIGHT] 36"
+                ]
+            }
+        },
+        {
+            "question": "Is this a desktop or notebook? (desktop/notebook)",
+            "answer": {
+                "desktop": [
+                    "replace ~/.config/polybar/config [MODULES-RIGHT] memory%20cpu"
+                ],
+                "notebook": [
+                    "replace ~/.config/polybar/config [MODULES-RIGHT] pulseaudio%20memory%20cpu%20battery%20wlan"
+                ]
+            }
+        }
+    ]
+}

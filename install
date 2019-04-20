@@ -46,10 +46,7 @@ def get_path(base_path, path):
         return os.path.expanduser(path)
     if path.startswith('/'):
         return path
-    return base_path + '/' + path
-
-def mkdir(filename):
-    os.makedirs(filename[:-len(filename.split('/')[-1])], exist_ok=True)                   
+    return base_path + '/' + path                
 
 def run_instructions(instructions, variables = {}):
     for instruction in instructions:
@@ -68,34 +65,37 @@ def run_instructions(instructions, variables = {}):
             # copies a file or directory
             # copy <from> <to>
             elif action == 'copy':
-                mkdir(get_path(RES_DIR + '/' + application, parameters[1]))
-                os.system('cd ' + RES_DIR + '/' + application + ' && cp -r ' + parameters[0] + ' ' + parameters[1])
+                os.system('sudo python src/copyFile.py ' + get_path(RES_DIR + '/' + application, parameters[0]) + ' ' + get_path(RES_DIR + '/' + application, parameters[1]))
             
             # appends the content of one file to the content of another file
             # append <fileToAppend> <fileToBeAppendedTo>
             elif action == 'append':
-                with open(get_path(RES_DIR + '/' + application, parameters[0]), 'r') as f_from:
-                    mkdir(get_path(RES_DIR + '/' + application, parameters[1]))
-                    with open(get_path(RES_DIR + '/' + application, parameters[1]), 'a') as f_to:
-                        f_to.write('\n')
-                        for line in f_from:
-                            f_to.write(line)
+                os.system('sudo python src/appendFile.py ' + get_path(RES_DIR + '/' + application, parameters[0]) + ' ' + get_path(RES_DIR + '/' + application, parameters[1]))
+
+            # replaces a string with another
+            # replace <filename> <stringToReplace> <stringToPutIn>
+            elif action == 'replace':
+                os.system('sudo python src/replaceStringInFile.py ' + get_path(RES_DIR + '/' + application, parameters[0]) + ' ' + parameters[1] + ' ' + parameters[2])
         
         # conditional instructions
         if type(instruction) == dict:
-            while True:
+            waiting = True
+            while waiting:
                 answer = input('\n' + instruction['question'] + '\n > ')
                 if instruction['answer'].get(answer):
                     run_instructions(instruction['answer'][answer])
-                    return
+                    waiting = False
+                    break
 
                 for ans in instruction['answer']:
                     if ans.startswith('{') and ans.endswith('}'):
                         variables.update({ans: answer})
                         run_instructions(instruction['answer'][ans], variables)
-                        return
-            
-                print(bcolors.FAIL + 'ERROR: illegal answer' + bcolors.ENDC)
+                        waiting = False
+                        break
+                
+                if waiting:
+                    print(bcolors.FAIL + 'ERROR: illegal answer' + bcolors.ENDC)
 
 
 ################################

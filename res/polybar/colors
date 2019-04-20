@@ -1,0 +1,12 @@
+;##################
+;###   colors   ###
+;##################
+
+[colors]
+background = #000000
+background-alt = #000000
+foreground = #dfdfdf
+foreground-alt = #555
+primary = #61cab3
+secondary = #fc6e95
+alert = #fc6e95
