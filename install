@@ -27,6 +27,7 @@ example install.json:
 '''
 
 import os
+import sys
 import json
 
 RES_DIR = 'res'
@@ -97,25 +98,7 @@ def run_instructions(instructions, variables = {}):
                 if waiting:
                     print(bcolors.FAIL + 'ERROR: illegal answer' + bcolors.ENDC)
 
-
-################################
-###   install yay from aur   ###
-################################
-if not os.path.isfile('/usr/bin/yay'):
-    print(bcolors.OKBLUE + 'installing yay from aur ...' + bcolors.ENDC)
-    try:
-        os.mkdir('tmp')
-    except:
-        pass
-    os.system('cd tmp && git clone https://aur.archlinux.org/yay.git')
-    os.system('cd tmp/yay && makepkg -is')
-else:
-    print(bcolors.OKBLUE + 'yay is installed on your system' + bcolors.ENDC)
-
-##################################
-###   configure applications   ###
-##################################
-for application in os.listdir(RES_DIR):
+def setup_application(application):
     print('setting up "' + application + '" ...')
 
     try:
@@ -139,3 +122,27 @@ for application in os.listdir(RES_DIR):
 
     except:
         print(bcolors.FAIL + '    ERROR: unable to open or handle install.json for "' + application + '"' + bcolors.ENDC)
+
+################################
+###   install yay from aur   ###
+################################
+if not os.path.isfile('/usr/bin/yay'):
+    print(bcolors.OKBLUE + 'installing yay from aur ...' + bcolors.ENDC)
+    try:
+        os.mkdir('tmp')
+    except:
+        pass
+    os.system('cd tmp && git clone https://aur.archlinux.org/yay.git')
+    os.system('cd tmp/yay && makepkg -is')
+else:
+    print(bcolors.OKBLUE + 'yay is installed on your system' + bcolors.ENDC)
+
+##################################
+###   configure applications   ###
+##################################
+if len(sys.argv) == 1:
+    for application in os.listdir(RES_DIR):
+        setup_application(application)
+else:
+    for application in sys.argv[1:]:
+        setup_application(application)
