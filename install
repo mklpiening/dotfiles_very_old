@@ -98,7 +98,7 @@ def run_instructions(instructions, variables = {}):
                 if waiting:
                     print(bcolors.FAIL + 'ERROR: illegal answer' + bcolors.ENDC)
 
-def setup_application(application):
+def setup_application(application, ignore_deps):
     print('setting up "' + application + '" ...')
 
     try:
@@ -106,13 +106,14 @@ def setup_application(application):
             instructions = json.load(f)
 
             # install dependencies
-            print(bcolors.OKBLUE + '    installing dependencies ...' + bcolors.ENDC)
-            for dependency in instructions['dependencies']:
-                if len(os.popen('pacman -Qs ' + dependency).read()) == 0:
-                    print(bcolors.OKBLUE + '        installing dependency "' + dependency + '" ...' + bcolors.ENDC)
-                    os.system('yay -S ' + dependency)
-                else:
-                    print(bcolors.OKBLUE + '        dependency "' + dependency + '" already satisfied' + bcolors.ENDC)
+            if not ignore_deps:
+                print(bcolors.OKBLUE + '    installing dependencies ...' + bcolors.ENDC)
+                for dependency in instructions['dependencies']:
+                    if len(os.popen('pacman -Qs ' + dependency).read()) == 0:
+                        print(bcolors.OKBLUE + '        installing dependency "' + dependency + '" ...' + bcolors.ENDC)
+                        os.system('yay -S ' + dependency)
+                    else:
+                        print(bcolors.OKBLUE + '        dependency "' + dependency + '" already satisfied' + bcolors.ENDC)
 
             # run installation instructions
             print(bcolors.OKBLUE + '    running configuration ...' + bcolors.ENDC)
@@ -123,26 +124,44 @@ def setup_application(application):
     except:
         print(bcolors.FAIL + '    ERROR: unable to open or handle install.json for "' + application + '"' + bcolors.ENDC)
 
+##########################
+###   help and flags   ###
+##########################
+if '--help' in sys.argv:
+    print('This is maltes dotfile-tool')
+    print()
+    print('Simply type ./install for a full setup.')
+    print('Type ./install <application1> <application2> ... can be used to select applications to be installed.')
+    print('The flag --ignore-deps makes this tool install no applications.')
+    print()
+    exit(0)
+
+ignore_deps = '--ignore-deps' in sys.argv
+if ignore_deps:
+    sys.argv.remove('--ignore-deps')
+
 ################################
 ###   install yay from aur   ###
 ################################
-if not os.path.isfile('/usr/bin/yay'):
-    print(bcolors.OKBLUE + 'installing yay from aur ...' + bcolors.ENDC)
-    try:
-        os.mkdir('tmp')
-    except:
-        pass
-    os.system('cd tmp && git clone https://aur.archlinux.org/yay.git')
-    os.system('cd tmp/yay && makepkg -is')
-else:
-    print(bcolors.OKBLUE + 'yay is installed on your system' + bcolors.ENDC)
+if not ignore_deps:
+    if not os.path.isfile('/usr/bin/yay'):
+        print(bcolors.OKBLUE + 'installing yay from aur ...' + bcolors.ENDC)
+        try:
+            os.mkdir('tmp')
+        except:
+            pass
+        os.system('cd tmp && git clone https://aur.archlinux.org/yay.git')
+        os.system('cd tmp/yay && makepkg -is')
+    else:
+        print(bcolors.OKBLUE + 'yay is installed on your system' + bcolors.ENDC)
 
 ##################################
 ###   configure applications   ###
 ##################################
 if len(sys.argv) == 1:
     for application in os.listdir(RES_DIR):
-        setup_application(application)
+        setup_application(application, ignore_deps)
 else:
     for application in sys.argv[1:]:
-        setup_application(application)
+        if not application.startswith('-'):
+            setup_application(application, ignore_deps)

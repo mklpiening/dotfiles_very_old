@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "betterlockscreen"
+    ],
+    "install": [
+        {
+            "question": "Please enter the path to your lockscreen wallpaper.",
+            "answer": {
+                "{lockscreen}": [
+                    "run  betterlockscreen -u {lockscreen} -b 2"
+                ]
+            }
+        }
+    ]
+}
