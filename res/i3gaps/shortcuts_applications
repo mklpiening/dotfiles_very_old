@@ -1,0 +1,16 @@
+#################################
+###   application shortcuts   ###
+#################################
+
+set $term urxvt
+set $starter rofi -show run
+set $lockscreen betterlockscreen -l blur
+
+# lock the system
+bindsym $mod+Shift+Return exec $lockscreen
+
+# start a terminal
+bindsym $mod+Return exec $term
+
+# run appstarter
+bindsym $mod+space exec $starter

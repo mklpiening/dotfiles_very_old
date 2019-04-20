@@ -1,0 +1,25 @@
+{
+    "dependencies": [
+        "i3-gaps",
+        "redshift",
+        "polybar",
+        "feh",
+        "rxvt-unicode",
+        "rofi",
+        "betterlockscreen",
+        "playerctl"
+    ],
+    "install": [
+        "copy config_base ~/.config/i3/config",
+        "append shortcuts_applications ~/.config/i3/config",
+        {
+            "question": "Install mac media shortcuts? (yes/no)",
+            "answer": {
+                "yes": [
+                    "append shortcuts_media_mac ~/.config/i3/config"
+                ],
+                "no": []
+            }
+        }
+    ]
+}
