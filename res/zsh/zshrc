@@ -1,0 +1,20 @@
+export ZSH="/home/malte/.oh-my-zsh"
+
+ZSH_THEME="bureau"
+
+plugins=(
+  git
+  zsh-syntax-highlighting
+  zsh-autosuggestions
+)
+
+source $ZSH/oh-my-zsh.sh
+
+ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/malte/.zshrc'
+
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
