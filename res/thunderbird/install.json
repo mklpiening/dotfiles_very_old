@@ -1,0 +1,15 @@
+{
+    "dependencies": [
+        "thunderbird"
+    ],
+    "install": [
+        {
+            "question": "What is the name of your thunderbird profile? (strange directory name under ~/.thunderbird/)",
+            "answer": {
+                "{thunderbird-profile}": [
+                    "copy chrome ~/.thunderbird/{thunderbird-profile}/chrome"
+                ]
+            }
+        }
+    ]
+}
