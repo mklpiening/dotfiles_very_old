@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "ranger",
+        "w3m"
+    ],
+    "install": [
+        "copy config ~/.config/ranger/rc.conf"
+    ]
+}

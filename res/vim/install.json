@@ -1,0 +1,8 @@
+{
+    "dependencies": [
+        "vim"
+    ],
+    "install": [
+        "copy vimrc ~/.vimrc"
+    ]
+}
