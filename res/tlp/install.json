@@ -1,0 +1,19 @@
+{
+    "dependencies": [
+        "tlp"
+    ],
+    "install": [
+        {
+            "question": "Which power improvement configuration do you want to install? (macbook/none)",
+            "variable": "{tlp-config}",
+            "answer": {
+                "macbook": [
+                    "copy config_mac /etc/default/tlp",
+                    "run sudo systemctl enable tlp",
+                    "run sudo systemctl enable tlp-sleep"
+                ],
+                "none": []
+            }
+        }
+    ]
+}
