@@ -1,0 +1,3 @@
+#!/bin/bash
+
+pacmd set-sink-mute 0 0

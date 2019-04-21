@@ -1,0 +1,26 @@
+{
+    "dependencies": [],
+    "install": [
+        {
+            "question": "Is this computer a mac? (yes/no)",
+            "variable": "{is_mac}",
+            "answer": {
+                "yes": [
+                    "copy suspendHandler /usr/local/bin/suspendHandler",
+                    "copy preSuspendHandler.service /etc/systemd/system/preSuspendHandler.service",
+                    "run sudo systemctl enable preSuspendHandler",
+                    "copy postSuspendHandler.service /etc/systemd/system/postSuspendHandler.service",
+                    "run sudo systemctl enable postSuspendHandler",
+
+                    "copy start-brcmfmac /usr/local/bin/start-brcmfmac",
+                    "copy brcmfmac.service /etc/systemd/system/brcmfmac.service",
+                    "run sudo systemctl start brcmfmac",
+                    "run sudo systemctl enable brcmfmac",
+
+                    "copy xsession ~/.xsession"
+                ],
+                "no": []
+            }
+        }
+    ]
+}

@@ -12,12 +12,13 @@ example install.json:
     "install": [
         {
             "question": "Möchtest du die gitconfig installieren?",
+            "variable": "{myVar}",
             "answer": {
                 "yes": [
                     "copy .gitconfig ~/.gitconfig"
                 ],
                 "no": [],
-                "{myVar}": [ "run echo {myVar}" ]
+                "*": [ "run echo {myVar}" ]
             }
         },
         "append .Xdefaults ~/.Xdefaults",
@@ -82,23 +83,31 @@ def run_instructions(instructions, variables = {}):
         if type(instruction) == dict:
             waiting = True
             while waiting:
-                answer = input('\n' + instruction['question'] + '\n > ')
+                if variables.get(instruction['variable']):
+                    answer = variables.get(instruction['variable'])
+                    print('\n' + instruction['question'])
+                    print(' > Answer already given: ' + answer)
+                else:
+                    answer = input('\n' + instruction['question'] + '\n > ')
+                    variables.update({instruction['variable']: answer})
+
+                print()
+
                 if instruction['answer'].get(answer):
                     run_instructions(instruction['answer'][answer])
                     waiting = False
                     break
 
-                for ans in instruction['answer']:
-                    if ans.startswith('{') and ans.endswith('}'):
-                        variables.update({ans: answer})
-                        run_instructions(instruction['answer'][ans], variables)
-                        waiting = False
-                        break
+                if instruction['answer'].get('*'):
+                    run_instructions(instruction['answer']['*'], variables)
+                    waiting = False
+                    break
                 
                 if waiting:
                     print(bcolors.FAIL + 'ERROR: illegal answer' + bcolors.ENDC)
+                    del variables[instruction['variable']]
 
-def setup_application(application, ignore_deps):
+def setup_application(application, variables, ignore_deps):
     print('setting up "' + application + '" ...')
 
     try:
@@ -117,7 +126,7 @@ def setup_application(application, ignore_deps):
 
             # run installation instructions
             print(bcolors.OKBLUE + '    running configuration ...' + bcolors.ENDC)
-            run_instructions(instructions['install'])
+            run_instructions(instructions['install'], variables)
 
             print(bcolors.OKGREEN + '    finished' + bcolors.ENDC)
 
@@ -158,10 +167,12 @@ if not ignore_deps:
 ##################################
 ###   configure applications   ###
 ##################################
+variables = {}
+
 if len(sys.argv) == 1:
     for application in os.listdir(RES_DIR):
-        setup_application(application, ignore_deps)
+        setup_application(application, variables, ignore_deps)
 else:
     for application in sys.argv[1:]:
-        if not application.startswith('-'):
-            setup_application(application, ignore_deps)
+        if not application.startswith('--'):
+            setup_application(application, variables, ignore_deps)

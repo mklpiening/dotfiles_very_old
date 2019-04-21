@@ -1,0 +1,8 @@
+[Unit]
+Description=Handles post suspend
+After=suspend.target
+[Service]
+Type=simple
+ExecStart=/usr/local/bin/suspendHandler/postSuspend.sh
+[Install]
+WantedBy=suspend.target

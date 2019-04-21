@@ -14,6 +14,7 @@
         "append shortcuts_applications ~/.config/i3/config",
         {
             "question": "Install mac media shortcuts? (yes/no)",
+            "variable": "{mac_media_shortcuts}",
             "answer": {
                 "yes": [
                     "append shortcuts_media_mac ~/.config/i3/config"
@@ -23,8 +24,9 @@
         },
         {
             "question": "Please enter the path to your wallpaper.",
+            "variable": "{wallpaper}",
             "answer": {
-                "{wallpaper}": [
+                "*": [
                     "replace ~/.config/i3/config [WALLPAPER] {wallpaper}"
                 ]
             }

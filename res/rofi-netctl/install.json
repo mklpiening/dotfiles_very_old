@@ -1,0 +1,9 @@
+{
+    "dependencies": [
+        "rofi",
+        "netctl"
+    ],
+    "install": [
+        "copy rofi-netctl /usr/local/bin/rofi-netctl"
+    ]
+}

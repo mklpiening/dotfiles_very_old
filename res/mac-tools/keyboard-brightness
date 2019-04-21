@@ -1,0 +1,20 @@
+#!/bin/bash
+NEW_VALUE=$1
+OLD_VALUE="$(cat /sys/class/leds/smc::kbd_backlight/brightness)"
+
+if [[ $1 == "+" ]];
+then
+	NEW_VALUE=$(($OLD_VALUE + 10))
+fi
+
+if [[ $1 == "-" ]];
+then
+	NEW_VALUE=$(($OLD_VALUE -10))
+fi
+
+if [[ $NEW_VALUE -gt 100 ]];
+then
+	NEW_VALUE=100
+fi
+
+echo $NEW_VALUE > /sys/class/leds/smc::kbd_backlight/brightness

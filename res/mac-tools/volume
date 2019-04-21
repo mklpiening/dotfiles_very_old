@@ -1,0 +1,4 @@
+#!/bin/bash
+
+pacmd set-sink-mute 0 0
+pacmd set-sink-volume 0 $((656 * $1))

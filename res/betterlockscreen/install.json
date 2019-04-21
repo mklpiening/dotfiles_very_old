@@ -5,9 +5,10 @@
     "install": [
         {
             "question": "Please enter the path to your lockscreen wallpaper.",
+            "variable": "{lockscreen_wallpaper}",
             "answer": {
-                "{lockscreen}": [
-                    "run  betterlockscreen -u {lockscreen} -b 2"
+                "*": [
+                    "run  betterlockscreen -u {lockscreen_wallpaper} -b 2"
                 ]
             }
         }

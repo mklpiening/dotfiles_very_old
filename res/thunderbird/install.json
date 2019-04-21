@@ -5,8 +5,9 @@
     "install": [
         {
             "question": "What is the name of your thunderbird profile? (strange directory name under ~/.thunderbird/)",
+            "variable": "{thunderbird-profile}",
             "answer": {
-                "{thunderbird-profile}": [
+                "*": [
                     "copy chrome ~/.thunderbird/{thunderbird-profile}/chrome"
                 ]
             }
