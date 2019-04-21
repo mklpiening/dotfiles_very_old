@@ -1,9 +1,0 @@
-[Unit]
-Description=Starts brcmfmac kernel module
-
-[Service]
-Type=simple
-ExecStart=/usr/local/bin/start-brcmfmac
-
-[Install]
-WantedBy=default.target

@@ -12,12 +12,8 @@
                     "copy postSuspendHandler.service /etc/systemd/system/postSuspendHandler.service",
                     "run sudo systemctl enable postSuspendHandler",
 
-                    "copy start-brcmfmac /usr/local/bin/start-brcmfmac",
-                    "copy brcmfmac.service /etc/systemd/system/brcmfmac.service",
-                    "run sudo systemctl start brcmfmac",
-                    "run sudo systemctl enable brcmfmac",
-
-                    "copy xsession ~/.xsession"
+                    "copy 10-trackpad.conf /etc/X11/xorg.conf.d/10-trackpad.conf",
+                    "copy 20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf"
                 ],
                 "no": []
             }

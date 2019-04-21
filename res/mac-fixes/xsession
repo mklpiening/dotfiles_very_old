@@ -1,3 +1,0 @@
-# fix scrolling direction
-xinput set-prop 13 289 1
-xinput set-prop 12 289 1
