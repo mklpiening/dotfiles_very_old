@@ -1,0 +1,8 @@
+{
+    "dependencies": [
+        "dunst"
+    ],
+    "install": [
+        "copy dunstrc ~/.config/dunst/dunstrc"
+    ]
+}

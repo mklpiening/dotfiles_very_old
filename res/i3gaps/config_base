@@ -11,6 +11,9 @@ exec polybar malte
 # set wallpaper
 exec feh --bg-fill [WALLPAPER]
 
+# run dunst
+exec dunst
+
 set $mod Mod1
 
 
