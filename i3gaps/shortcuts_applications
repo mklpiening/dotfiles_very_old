@@ -2,10 +2,6 @@
 ###   application shortcuts   ###
 #################################
 
-set $term urxvt
-set $starter rofi -show run
-set $lockscreen betterlockscreen -l blur
-
 # lock the system
 bindsym $mod+Shift+Return exec $lockscreen
 
