@@ -13,7 +13,9 @@
                     "run sudo systemctl enable postSuspendHandler",
 
                     "copy 10-trackpad.conf /etc/X11/xorg.conf.d/10-trackpad.conf",
-                    "copy 20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf"
+                    "copy 20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf",
+
+                    "copy install.json /etc/systemd/logind.conf"
                 ],
                 "no": []
             }
