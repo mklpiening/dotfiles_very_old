@@ -1,5 +1,7 @@
 {
-    "dependencies": [],
+    "dependencies": [
+        "bcwc-pcie-git"
+    ],
     "install": [
         {
             "question": "Is this computer a mac? (yes/no)",
@@ -15,7 +17,10 @@
                     "copy 10-trackpad.conf /etc/X11/xorg.conf.d/10-trackpad.conf",
                     "copy 20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf",
 
-                    "copy install.json /etc/systemd/logind.conf"
+                    "copy logind.conf /etc/systemd/logind.conf",
+
+                    "copy webcam /etc/local/bin/webcam",
+                    "copy bcwc-pcie.conf /etc/modules-load.d/bcwc-pcie.conf"
                 ],
                 "no": []
             }
