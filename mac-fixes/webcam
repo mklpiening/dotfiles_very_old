@@ -5,9 +5,9 @@ function error
     echo "illegal use!"
     echo ""
     echo "use either"
-    echo "  webcam --on"
+    echo "  webcam on"
     echo "or"
-    echo "  webcam --off"
+    echo "  webcam off"
     exit
 }
 
@@ -15,9 +15,9 @@ if [ "$#" -ne 1 ]; then
     error
 fi
 	
-if [ "$1" = "--on" ]; then
+if [ "$1" = "on" ]; then
     modprobe facetimehd
-elif [ "$1" = "--off" ]; then
+elif [ "$1" = "off" ]; then
     modprobe -r facetimehd
 else
     error
