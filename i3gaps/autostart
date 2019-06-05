@@ -11,8 +11,5 @@ exec polybar malte
 # set wallpaper
 exec feh --bg-fill [WALLPAPER]
 
-# enable lock on suspend
-exec xss-lock -- betterlockscreen -l blur
-
 # run dunst for notifications
 exec dunst

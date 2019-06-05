@@ -2,19 +2,19 @@
 ###  look   ###
 ###############
 
-font pango:monospace 8
+font pango:monospace [FONTSIZE]
 
-client.focused #ebf8f9 #ebf8f9 #ebf8f9 #ebf8f9
-client.unfocused #030809 #030809 #030809 #030809
-client.focused_inactive #313535 #313535 #313535 #313535
-client.urgent #61cab3 #61cab3 #61cab3 #61cab3
+client.focused #ebf8f9 #ebf8f9 #030809 #ebf8f9
+client.unfocused #030809 #030809 #616565 #030809
+client.focused_inactive #313535 #313535 #616565 #313535
+client.urgent #61cab3 #61cab3 #030809 #030809
 
 
 default_border pixel 3
 
-gaps inner 32
-gaps outer 32
-
+gaps inner 10
+gaps outer 0
+gaps top 46
 
 #####################
 ###  workspaces   ###

@@ -7,10 +7,10 @@ enable-ipc = true
 
 monitor = ${env:MONITOR:[MONITOR]}
 override-redirect = true
-width = 50%
+width = [WIDTH]
 height = [HEIGHT]
-offset-x = 25%
-offset-y = 1%
+offset-x = [OFFSET-X]
+offset-y = [OFFSET-Y]
 radius = 0.0
 fixed-center = true
 

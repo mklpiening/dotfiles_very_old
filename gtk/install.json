@@ -1,11 +1,8 @@
 {
     "dependencies": [],
     "install": [
-        "run mkdir -p ../../tmp && cd ../../tmp && git clone  --single-branch --branch mars https://github.com/EliverLara/Sweet.git Sweet-Mars",
-        "copy ../../tmp/Sweet-Mars ~/.themes/Sweet-Mars",
-
-        "run mkdir -p ../../tmp && cd ../../tmp && git clone https://github.com/vinceliuice/emerald-icon-theme.git",
-        "copy ../../tmp/emerald-icon-theme/Emerald ~/.local/share/icons/Emerald",
+        "run mkdir -p ../../tmp && cd ../../tmp && git clone https://github.com/B00merang-Project/Solaris-10-CDE.git",
+        "copy ../../tmp/Solaris-10-CDE ~/.themes/Solaris-10-CDE",
 
         "copy settings.ini ~/.config/gtk-3.0/settings.ini"
     ]

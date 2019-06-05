@@ -1,6 +1,6 @@
 {
     "dependencies": [
-        "i3-gaps",
+        "i3-gaps-next-git",
         "redshift",
         "polybar",
         "feh",
@@ -8,8 +8,7 @@
         "rxvt-unicode",
         "rofi",
         "betterlockscreen",
-        "playerctl",
-        "xss-lock"
+        "playerctl"
     ],
     "install": [
         "copy variables ~/.config/i3/config",
@@ -32,6 +31,18 @@
             "answer": {
                 "*": [
                     "replace ~/.config/i3/config [WALLPAPER] {wallpaper}"
+                ]
+            }
+        },
+        {
+            "question": "Use HiDPI scaling? (yes/no)",
+            "variable": "{use_hidpi}",
+            "answer": {
+                "yes": [
+                    "replace ~/.config/i3/config [FONTSIZE] 10"
+                ],
+                "no": [
+                    "replace ~/.config/i3/config [FONTSIZE] 8"
                 ]
             }
         },
