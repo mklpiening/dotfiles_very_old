@@ -13,3 +13,6 @@ exec feh --bg-fill [WALLPAPER]
 
 # run dunst for notifications
 exec dunst
+
+# run compton
+exec compton --config ~/.config/compton/compton.conf

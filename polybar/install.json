@@ -20,30 +20,27 @@
             "question": "What is your primary screen width? (in pixel)",
             "variable": "{primary_screen_width}",
             "answer": {
-                "*": []
-            }
-        },
-        {
-            "question": "Use HiDPI scaling? (yes/no)",
-            "variable": "{use_hidpi}",
-            "answer": {
-                "yes": [
-                    "replace ~/.config/polybar/config [FONTSIZE] 16",
-                    "replace ~/.config/polybar/config [HEIGHT] 56",
-
-                    "eval {polybar_width} {primary_screen_width} - 2 * 15",
-                    "replace ~/.config/polybar/config [WIDTH] {polybar_width}",
-                    "replace ~/.config/polybar/config [OFFSET-X] 15",
-                    "replace ~/.config/polybar/config [OFFSET-Y] 15"
-                ],
-                "no": [
-                    "replace ~/.config/polybar/config [FONTSIZE] 10",
-                    "replace ~/.config/polybar/config [HEIGHT] 36",
-
-                    "eval {polybar_width} {primary_screen_width} - 2 * 10",
-                    "replace ~/.config/polybar/config [WIDTH] {polybar_width}",
-                    "replace ~/.config/polybar/config [OFFSET-X] 10",
-                    "replace ~/.config/polybar/config [OFFSET-Y] 10"
+                "*": [
+                    {
+                        "question": "Use HiDPI scaling? (yes/no)",
+                        "variable": "{use_hidpi}",
+                        "answer": {
+                            "yes": [
+                                "replace ~/.config/polybar/config [FONTSIZE] 16",
+                                "replace ~/.config/polybar/config [HEIGHT] 56",
+            
+                                "replace ~/.config/polybar/config [WIDTH] {primary_screen_width}",
+                                "replace ~/.config/polybar/config [GAPS] 15"
+                            ],
+                            "no": [
+                                "replace ~/.config/polybar/config [FONTSIZE] 10",
+                                "replace ~/.config/polybar/config [HEIGHT] 36",
+            
+                                "replace ~/.config/polybar/config [WIDTH] {primary_screen_width}",
+                                "replace ~/.config/polybar/config [GAPS] 10"
+                            ]
+                        }
+                    }
                 ]
             }
         },
