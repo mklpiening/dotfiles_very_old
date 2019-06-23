@@ -1,6 +1,0 @@
-{
-    "dependencies": [],
-    "install": [
-        "copy loginManager.sh /etc/profile.d/loginManager.sh"
-    ]
-}

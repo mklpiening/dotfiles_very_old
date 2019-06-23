@@ -1,0 +1,27 @@
+{
+    "dependencies": [
+        "bspwm",
+        "sxhkd",
+        "redshift",
+        "polybar",
+        "feh",
+        "rxvt-unicode",
+        "rofi",
+        "playerctl"
+    ],
+    "install": [
+        "copy bspwmrc ~/.config/bspwm/bspwmrc",
+        "copy sxhkdrc ~/.config/sxhkd/sxhkdrc",
+        {
+            "question": "Please enter the path to your wallpaper.",
+            "variable": "{wallpaper}",
+            "answer": {
+                "*": [
+                    "replace ~/.config/i3/config [WALLPAPER] {wallpaper}"
+                ]
+            }
+        },
+        "copy .dmrc ~/.dmrc",
+        "copy xinitrc ~/.xinitrc"
+    ]
+}

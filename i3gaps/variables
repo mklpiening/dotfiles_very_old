@@ -1,9 +1,0 @@
-###################
-###  variables  ###
-###################
-
-set $mod Mod1
-
-set $term urxvt
-set $starter rofi -show run
-set $lockscreen betterlockscreen -l blur
