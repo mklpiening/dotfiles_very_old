@@ -15,6 +15,7 @@
                 ]
             }
         },
-        "copy lightdm.conf /etc/lightdm/lightdm.conf"
+        "copy lightdm.conf /etc/lightdm/lightdm.conf",
+        "sudo systemctl enable lightdm"
     ]
 }

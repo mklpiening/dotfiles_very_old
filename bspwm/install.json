@@ -7,7 +7,8 @@
         "feh",
         "rxvt-unicode",
         "rofi",
-        "playerctl"
+        "playerctl",
+        "xorg-xsetroot"
     ],
     "install": [
         "copy bspwmrc ~/.config/bspwm/bspwmrc",
@@ -18,6 +19,18 @@
             "answer": {
                 "*": [
                     "replace ~/.config/i3/config [WALLPAPER] {wallpaper}"
+                ]
+            }
+        },
+        {
+            "question": "shat should be your hotkey (super / alt).",
+            "variable": "{key}",
+            "answer": {
+                "alt": [
+                    "replace ~/.config/sxhkd/sxhkdrc [KEY] {key}"
+                ],
+                "super": [                    
+                    "replace ~/.config/sxhkd/sxhkdrc [KEY] {key}"
                 ]
             }
         },
