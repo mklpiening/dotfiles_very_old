@@ -1,0 +1,18 @@
+###########################
+###  startup programs   ###
+###########################
+
+# run redshift
+exec redshift -l 52.267393:8.052631 -t 6500K:3500K
+
+# run polybar
+exec polybar malte
+
+# set wallpaper
+exec feh --bg-fill [WALLPAPER]
+
+# run dunst for notifications
+exec dunst
+
+# run compton
+exec compton --config ~/.config/compton/compton.conf
