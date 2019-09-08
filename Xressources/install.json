@@ -1,0 +1,23 @@
+{
+    "dependencies": [
+    ],
+    "install": [
+        "copy Xressources ~/.Xressources",
+        "copy Xressources-hidpi ~/.Xressources-hidpi",
+        "copy xinitrc ~/.xinitrc",
+        "copy scale-hidpi /usr/local/bin/scale-hidpi",
+        "copy scale-normal /usr/local/bin/scale-normal",
+        {
+            "question": "Use HiDPI scaling? (yes/no)",
+            "variable": "{use_hidpi}",
+            "answer": {
+                "yes": [
+                    "replace ~/.xinitrc [SCALE_COMMAND] scale-hidpi"
+                ],
+                "no": [
+                    "replace ~/.xinitrc [SCALE_COMMAND] scale-normal"
+                ]
+            }
+        }
+    ]
+}

@@ -7,7 +7,8 @@
         "dunst",
         "rxvt-unicode",
         "rofi",
-        "playerctl"
+        "playerctl",
+        "i3lock"
     ],
     "install": [
         "copy variables ~/.config/i3/config",
@@ -34,6 +35,27 @@
             }
         },
         {
+            "question": "Please enter the path to your lockscreen wallpaper.",
+            "variable": "{lockscreen_wallpaper}",
+            "answer": {
+                "*": [
+                    "replace ~/.config/i3/config [WALLPAPER] {lockscreen_wallpaper}"
+                ]
+            }
+        },
+        {
+            "question": "what is the background color of your wallpaper (default 000000)?",
+            "variable": "{lockscreen_color}",
+            "answer": {
+                "": [
+                    "replace ~/.config/i3/config [LOCKSCREEN_COLOR] 000000"
+                ],
+                "*": [
+                    "replace ~/.config/i3/config [LOCKSCREEN_COLOR] {lockscreen_color}"
+                ]
+            }
+        },
+        {
             "question": "Use HiDPI scaling? (yes/no)",
             "variable": "{use_hidpi}",
             "answer": {
@@ -44,7 +66,6 @@
                     "replace ~/.config/i3/config [FONTSIZE] 8"
                 ]
             }
-        },
-        "copy xinitrc ~/.xinitrc"
+        }
     ]
 }

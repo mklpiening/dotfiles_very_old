@@ -6,7 +6,7 @@
 enable-ipc = true
 
 monitor = ${env:MONITOR:[MONITOR]}
-width = [WIDTH]
+width = 100%
 height = [HEIGHT]
 radius = 0.0
 fixed-center = true
@@ -14,10 +14,12 @@ fixed-center = true
 background = ${colors.background}
 foreground = ${colors.foreground}
 
+underline-size = 0
+
 line-size = 3
 line-color = #f00
 
-border-size = [GAPS]
+border-size = 0
 border-bottom-size = 0
 border-color = #00000000
 

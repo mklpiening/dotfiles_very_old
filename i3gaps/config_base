@@ -10,9 +10,10 @@ client.focused_inactive #313535 #313535 #616565 #313535
 client.urgent #61cab3 #61cab3 #030809 #030809
 
 
-default_border pixel 3
+hide_edge_borders smart
+default_border pixel 1
 
-gaps inner 10
+gaps inner 0
 gaps outer 0
 
 #####################

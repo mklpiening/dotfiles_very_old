@@ -6,4 +6,4 @@ set $mod Mod1
 
 set $term urxvt
 set $starter rofi -show run
-set $lockscreen betterlockscreen -l blur
+set $lockscreen i3lock -u -i [LOCKSCREEN_WALLPAPER] -c [LOCKSCREEN_COLOR]

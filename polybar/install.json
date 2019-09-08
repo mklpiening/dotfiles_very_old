@@ -17,30 +17,16 @@
             }
         },
         {
-            "question": "What is your primary screen width? (in pixel)",
-            "variable": "{primary_screen_width}",
+            "question": "Use HiDPI scaling? (yes/no)",
+            "variable": "{use_hidpi}",
             "answer": {
-                "*": [
-                    {
-                        "question": "Use HiDPI scaling? (yes/no)",
-                        "variable": "{use_hidpi}",
-                        "answer": {
-                            "yes": [
-                                "replace ~/.config/polybar/config [FONTSIZE] 16",
-                                "replace ~/.config/polybar/config [HEIGHT] 56",
-            
-                                "replace ~/.config/polybar/config [WIDTH] {primary_screen_width}",
-                                "replace ~/.config/polybar/config [GAPS] 15"
-                            ],
-                            "no": [
-                                "replace ~/.config/polybar/config [FONTSIZE] 10",
-                                "replace ~/.config/polybar/config [HEIGHT] 36",
-            
-                                "replace ~/.config/polybar/config [WIDTH] {primary_screen_width}",
-                                "replace ~/.config/polybar/config [GAPS] 10"
-                            ]
-                        }
-                    }
+                "yes": [
+                    "replace ~/.config/polybar/config [FONTSIZE] 16",
+                    "replace ~/.config/polybar/config [HEIGHT] 28"
+                ],
+                "no": [
+                    "replace ~/.config/polybar/config [FONTSIZE] 10",
+                    "replace ~/.config/polybar/config [HEIGHT] 19"
                 ]
             }
         },
