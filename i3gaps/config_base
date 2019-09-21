@@ -9,8 +9,6 @@ client.unfocused #000000 #000000 #616565 #000000
 client.focused_inactive #000000 #000000 #616565 #000000
 client.urgent #61cab3 #61cab3 #030809 #030809
 
-
-hide_edge_borders smart
 default_border pixel 1
 
 gaps inner 0

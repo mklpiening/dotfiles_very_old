@@ -8,19 +8,19 @@
             "variable": "{is_mac}",
             "answer": {
                 "yes": [
-                    "copy suspendHandler /usr/local/bin/suspendHandler",
-                    "copy preSuspendHandler.service /etc/systemd/system/preSuspendHandler.service",
+                    "copy --su suspendHandler /usr/local/bin/suspendHandler",
+                    "copy --su preSuspendHandler.service /etc/systemd/system/preSuspendHandler.service",
                     "run sudo systemctl enable preSuspendHandler",
-                    "copy postSuspendHandler.service /etc/systemd/system/postSuspendHandler.service",
+                    "copy --su postSuspendHandler.service /etc/systemd/system/postSuspendHandler.service",
                     "run sudo systemctl enable postSuspendHandler",
 
-                    "copy 10-trackpad.conf /etc/X11/xorg.conf.d/10-trackpad.conf",
-                    "copy 20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf",
+                    "copy --su 10-trackpad.conf /etc/X11/xorg.conf.d/10-trackpad.conf",
+                    "copy --su 20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf",
 
-                    "copy logind.conf /etc/systemd/logind.conf",
+                    "copy --su logind.conf /etc/systemd/logind.conf",
 
-                    "copy webcam /etc/local/bin/webcam",
-                    "copy bcwc-pcie.conf /etc/modules-load.d/bcwc-pcie.conf"
+                    "copy --su webcam /etc/local/bin/webcam",
+                    "copy --su bcwc-pcie.conf /etc/modules-load.d/bcwc-pcie.conf"
                 ],
                 "no": []
             }

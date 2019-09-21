@@ -1,9 +1,0 @@
-{
-    "dependencies": [
-        "rofi",
-        "netctl"
-    ],
-    "install": [
-        "copy wifi-selector /usr/local/bin/wifi-selector"
-    ]
-}

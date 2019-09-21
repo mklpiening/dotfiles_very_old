@@ -5,8 +5,8 @@
         "copy Xressources ~/.Xressources",
         "copy Xressources-hidpi ~/.Xressources-hidpi",
         "copy xinitrc ~/.xinitrc",
-        "copy scale-hidpi /usr/local/bin/scale-hidpi",
-        "copy scale-normal /usr/local/bin/scale-normal",
+        "copy --su scale-hidpi /usr/local/bin/scale-hidpi",
+        "copy --su scale-normal /usr/local/bin/scale-normal",
         {
             "question": "Use HiDPI scaling? (yes/no)",
             "variable": "{use_hidpi}",

@@ -6,12 +6,12 @@
             "variable": "{is_mac}",
             "answer": {
                 "yes": [
-                    "copy brightness /usr/local/bin/brightness",
-                    "copy current-power /usr/local/bin/current-power",
-                    "copy keyboard-brightness /usr/local/bin/keyboard-brightness",
-                    "copy mute /usr/local/bin/mute",
-                    "copy umute /usr/local/bin/umute",
-                    "copy volume /usr/local/bin/volume"
+                    "copy --su brightness /usr/local/bin/brightness",
+                    "copy --su current-power /usr/local/bin/current-power",
+                    "copy --su keyboard-brightness /usr/local/bin/keyboard-brightness",
+                    "copy --su mute /usr/local/bin/mute",
+                    "copy --su umute /usr/local/bin/umute",
+                    "copy --su volume /usr/local/bin/volume"
                 ],
                 "no": []
             }
