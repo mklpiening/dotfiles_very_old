@@ -2,7 +2,7 @@
     "dependencies": [],
     "install": [
         "run mkdir -p ../tmp && cd ../tmp && git clone https://github.com/mklpiening/gray-motif.git",
-        "copy ../tmp/gray-motif ~/.themes/gray-motif",
+        "copy ../../tmp/gray-motif ~/.themes/gray-motif",
 
         "copy settings.ini ~/.config/gtk-3.0/settings.ini"
     ]
