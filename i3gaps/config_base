@@ -5,8 +5,8 @@
 font pango:monospace [FONTSIZE]
 
 client.focused #ebf8f9 #ebf8f9 #030809 #ebf8f9
-client.unfocused #030809 #030809 #616565 #030809
-client.focused_inactive #313535 #313535 #616565 #313535
+client.unfocused #000000 #000000 #616565 #000000
+client.focused_inactive #000000 #000000 #616565 #000000
 client.urgent #61cab3 #61cab3 #030809 #030809
 
 
