@@ -13,9 +13,9 @@
     ],
     "install": [
         "copy variables ~/.config/i3/config",
-        "append autostart ~/.config/i3/config",
         "append config_base ~/.config/i3/config",
         "append shortcuts_applications ~/.config/i3/config",
+        "append autostart ~/.config/i3/config",
         {
             "question": "Install mac media shortcuts? (yes/no)",
             "variable": "{mac_media_shortcuts}",
