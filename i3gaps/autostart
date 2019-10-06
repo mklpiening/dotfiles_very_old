@@ -7,10 +7,10 @@
 exec redshift -l 52.267393:8.052631 -t 6500K:3500K
 
 # run polybar
-exec polybar malte
+exec polybar [BAR]
 
 # set wallpaper
-exec ~/.config/i3/setWallpaper.sh
+exec wallpaper
 
 # run dunst for notifications
 exec dunst

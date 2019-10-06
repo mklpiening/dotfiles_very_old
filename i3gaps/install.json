@@ -16,7 +16,7 @@
         "append config_base ~/.config/i3/config",
         "append shortcuts_applications ~/.config/i3/config",
         "append autostart ~/.config/i3/config",
-	"copy setWallpaper.sh ~/.config/i3/setWallpaper.sh",
+	"copy --su wallpaper /usr/local/bin/wallpaper",
         {
             "question": "Install mac media shortcuts? (yes/no)",
             "variable": "{mac_media_shortcuts}",
@@ -32,7 +32,7 @@
             "variable": "{wallpaper}",
             "answer": {
                 "*": [
-                    "replace ~/.config/i3/setWallpaper.sh [WALLPAPER] {wallpaper}"
+                    "replace --su /usr/local/bin/wallpaper [WALLPAPER] {wallpaper}"
                 ]
             }
         },
@@ -62,10 +62,12 @@
             "variable": "{use_hidpi}",
             "answer": {
                 "yes": [
-                    "replace ~/.config/i3/config [FONTSIZE] 10"
+                    "replace ~/.config/i3/config [FONTSIZE] 10",
+                    "replace ~/.config/i3/config [BAR] hidpi"
                 ],
                 "no": [
-                    "replace ~/.config/i3/config [FONTSIZE] 8"
+                    "replace ~/.config/i3/config [FONTSIZE] 8",
+                    "replace ~/.config/i3/config [BAR] normal"
                 ]
             }
         }

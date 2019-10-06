@@ -9,29 +9,6 @@
         "append modules ~/.config/polybar/config",
         "append settings ~/.config/polybar/config",
         {
-            "question": "What is the name of your main display? (use xrandr to view the names)",
-            "variable": "{primary_display}",
-            "answer": {
-                "*": [
-                    "replace ~/.config/polybar/config [MONITOR] {primary_display}"
-                ]
-            }
-        },
-        {
-            "question": "Use HiDPI scaling? (yes/no)",
-            "variable": "{use_hidpi}",
-            "answer": {
-                "yes": [
-                    "replace ~/.config/polybar/config [FONTSIZE] 16",
-                    "replace ~/.config/polybar/config [HEIGHT] 28"
-                ],
-                "no": [
-                    "replace ~/.config/polybar/config [FONTSIZE] 10",
-                    "replace ~/.config/polybar/config [HEIGHT] 19"
-                ]
-            }
-        },
-        {
             "question": "Is this a desktop or notebook? (desktop/notebook)",
             "variable": "{device_type}",
             "answer": {

@@ -2,12 +2,11 @@
 ;###   bar   ###
 ;###############
 
-[bar/malte]
+[bar/base]
 enable-ipc = true
 
-monitor = ${env:MONITOR:[MONITOR]}
+monitor = ${env:MONITOR:}
 width = 100%
-height = [HEIGHT]
 radius = 0.0
 fixed-center = true
 
@@ -29,10 +28,6 @@ padding-right = 2
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = DroidSansRegular:size=[FONTSIZE];0
-font-1 = DroidSansRegular:size=[FONTSIZE];0
-font-2 = DroidSansRegular:size=[FONTSIZE];0
-
 modules-left = i3
 modules-center = date
 modules-right = [MODULES-RIGHT]
@@ -45,3 +40,22 @@ wm-restack = i3
 cursor-click = pointer
 cursor-scroll = ns-resize
 erline = ${colors.secondary}
+
+[bar/normal]
+inherit = bar/base
+
+height = 20
+
+font-0 = DroidSansRegular:size=10;0
+font-1 = DroidSansRegular:size=10;0
+font-2 = DroidSansRegular:size=10;0
+
+[bar/hidpi]
+inherit = bar/base
+
+height = 32
+
+font-0 = DroidSansRegular:size=16;0
+font-1 = DroidSansRegular:size=16;0
+font-2 = DroidSansRegular:size=16;0
+
