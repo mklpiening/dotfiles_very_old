@@ -2,7 +2,7 @@
 ###  look   ###
 ###############
 
-font pango:monospace [FONTSIZE]
+font xft:DroidSansMono [FONTSIZE]
 
 client.focused #ebf8f9 #ebf8f9 #030809 #ebf8f9
 client.unfocused #000000 #000000 #616565 #000000

@@ -1,9 +1,10 @@
 {
     "dependencies": [
+	"ttf-droid"
     ],
     "install": [
-        "copy Xressources ~/.Xressources",
-        "copy Xressources-hidpi ~/.Xressources-hidpi",
+        "copy Xresources ~/.Xresources",
+        "copy Xresources-hidpi ~/.Xresources-hidpi",
         "copy xinitrc ~/.xinitrc",
         "copy --su scale-hidpi /usr/local/bin/scale-hidpi",
         "copy --su scale-normal /usr/local/bin/scale-normal",

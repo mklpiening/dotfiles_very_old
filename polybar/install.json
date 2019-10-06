@@ -1,6 +1,7 @@
 {
     "dependencies": [
-        "polybar"
+        "polybar",
+        "ttf-droid"
     ],
     "install": [
         "copy colors ~/.config/polybar/config",

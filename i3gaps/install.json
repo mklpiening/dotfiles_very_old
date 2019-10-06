@@ -8,7 +8,8 @@
         "rxvt-unicode",
         "rofi",
         "playerctl",
-        "i3lock"
+        "i3lock",
+	"ttf-droid"
     ],
     "install": [
         "copy variables ~/.config/i3/config",

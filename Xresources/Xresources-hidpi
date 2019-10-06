@@ -7,11 +7,11 @@ urxvt.termName: rxvt-unicode
 urxvt.scrollBar: false
 urxvt.background: #000000
 urxvt.foreground: #ebf8f9
-URxvt.internalBorder: 20
+URxvt.internalBorder: 30
 
 !! Inconsolata font
-URxvt.font: xft:Inconsolata-10,xft:Inconsolata\ for\ Powerline:pixelsize=10
-URxvt.boldFont: xft:Inconsolata-10,xft:Inconsolata\ for\ Powerline:pixelsize=10
+URxvt.font: xft:DroidSansMono:size=10
+URxvt.boldFont: xft:DroidSansMono:size=10
 URxvt.letterSpace: -1
 
 !! Larger history limit
@@ -55,8 +55,11 @@ urxvt.color13:      #b9a1c1
 urxvt.color6:       #a1bcab
 urxvt.color14:      #a8ddbc
 urxvt.color7:       #dcede5
+urxvt.color15:      #bfd9d7
 
-Xcursor.size: 16
+!!######################
+!!###   HiDPI mods   ###
+!!######################
 
-*.dpi: 96
-Xft.dpi: 96
+*.dpi: 150
+Xft.dpi: 150

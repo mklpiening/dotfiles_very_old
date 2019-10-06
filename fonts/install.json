@@ -1,0 +1,8 @@
+{
+    "dependencies": [
+	"noto-fonts-emoji"
+    ],
+    "install": [
+        "copy fonts.conf ~/.config/fontconfig/fonts.conf"
+    ]
+}
