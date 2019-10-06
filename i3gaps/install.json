@@ -16,6 +16,7 @@
         "append config_base ~/.config/i3/config",
         "append shortcuts_applications ~/.config/i3/config",
         "append autostart ~/.config/i3/config",
+	"copy setWallpaper.sh ~/.config/i3/setWallpaper.sh",
         {
             "question": "Install mac media shortcuts? (yes/no)",
             "variable": "{mac_media_shortcuts}",
@@ -31,7 +32,7 @@
             "variable": "{wallpaper}",
             "answer": {
                 "*": [
-                    "replace ~/.config/i3/config [WALLPAPER] {wallpaper}"
+                    "replace ~/.config/i3/setWallpaper.sh [WALLPAPER] {wallpaper}"
                 ]
             }
         },
