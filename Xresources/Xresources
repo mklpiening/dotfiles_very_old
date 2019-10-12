@@ -7,7 +7,7 @@ urxvt.termName: rxvt-unicode
 urxvt.scrollBar: false
 urxvt.background: #000000
 urxvt.foreground: #ebf8f9
-URxvt.internalBorder: 20
+URxvt.internalBorder: 5
 
 !! Inconsolata font
 URxvt.font: xft:DroidSansMono:size=10
