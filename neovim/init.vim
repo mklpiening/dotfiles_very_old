@@ -22,9 +22,16 @@ call plug#begin('~/.config/nvim/plugged')
 
 
 " plugins {
-    Plug 'scrooloose/nerdtree'
+    " nerdtree {
+        Plug 'scrooloose/nerdtree'
+        
+        let NERDTreeDirArrowExpandable = "+"
+        let NERDTreeDirArrowCollapsible = "-"
 
-    " Autocompletion
+        let NERDTreeShowHidden = 1
+    " }
+
+    " Autocompletion {
         Plug 'Shougo/deoplete.nvim'
         Plug 'zchee/deoplete-clang'
         
@@ -36,6 +43,9 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Shortcuts {
     map <C-n> :NERDTreeToggle<CR>
+
+    map <C-I> :py3f /usr/share/clang/clang-format.py<cr>
+    map <C-i> :%py3f /usr/share/clang/clang-format.py<cr>
 " }
 
 
