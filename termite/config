@@ -1,0 +1,67 @@
+[options]
+allow_bold = true
+audible_bell = false
+bold_is_bright = true
+#cell_height_scale = 1.0
+#cell_width_scale = 1.0
+clickable_url = true
+
+font = Droid Sans Mono 11
+
+mouse_autohide = true
+scroll_on_output = false
+scroll_on_keystroke = true
+scrollback_lines = 10000
+search_wrap = true
+urgent_on_bell = false
+hyperlinks = true
+
+cursor_blink = off
+cursor_shape = block
+
+# Emit escape sequences for extra modified keys
+#modify_other_keys = false
+
+# set size hints for the window
+#size_hints = false
+
+scrollbar = off
+
+[colors]
+cursor = #ebf8f9
+cursor_foreground = #000000
+
+foreground = #ebf8f9
+foreground_bold = #ebf8f9
+background = #000000
+
+highlight = #2f2f2f
+
+color0 =       #000000
+color8 =       #39484c
+color1 =       #f94059
+color9 =       #fc6e95
+color2 =       #61cab3
+color10 =      #61cab3
+color3 =       #d9d9f3
+color11 =      #d9d9f3
+color4 =      #8dc5e6
+color12 =      #8dc5e6
+color5 =       #b9a1c1
+color13 =      #b9a1c1
+color6 =       #a1bcab
+color14 =      #a8ddbc
+color7 =       #dcede5
+
+[hints]
+#font = Monospace 12
+#foreground = #dcdccc
+#background = #3f3f3f
+#active_foreground = #e68080
+#active_background = #3f3f3f
+#padding = 2
+#border = #3f3f3f
+#border_width = 0.5
+#roundness = 2.0
+
+# vim: ft=dosini cms=#%s

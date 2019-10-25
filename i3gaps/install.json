@@ -5,7 +5,7 @@
         "polybar",
         "feh",
         "dunst",
-        "rxvt-unicode",
+        "termite",
         "rofi",
         "playerctl",
         "i3lock",

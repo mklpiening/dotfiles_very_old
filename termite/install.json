@@ -1,0 +1,8 @@
+{
+    "dependencies": [
+        "termite"
+    ],
+    "install": [
+        "copy config ~/.config/termite/config"
+    ]
+}
