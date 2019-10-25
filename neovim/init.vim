@@ -2,6 +2,8 @@ call plug#begin('~/.config/nvim/plugged')
 
 
 " General settings {
+    set nocompatible
+
     set clipboard=unnamedplus
     set mouse=a
 
@@ -56,8 +58,22 @@ call plug#begin('~/.config/nvim/plugged')
         
         let g:load_doxygen_syntax=1
     " }
-    
-    Plug 'Townk/vim-autoclose'
+   
+    " Auto close {
+        Plug 'Raimondi/delimitMate'
+    "}
+
+    " Seamless tmux navigation { 
+        Plug 'christoomey/vim-tmux-navigator'
+        
+        let g:tmux_navigator_no_mappings = 1
+
+        nnoremap <silent> <c-Left> :TmuxNavigateLeft<cr>
+        nnoremap <silent> <c-Down> :TmuxNavigateDown<cr>
+        nnoremap <silent> <c-Up> :TmuxNavigateUp<cr>
+        nnoremap <silent> <c-Right> :TmuxNavigateRight<cr>
+        nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
+    " }
 " } 
 
 
