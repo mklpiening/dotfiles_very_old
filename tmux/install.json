@@ -1,0 +1,8 @@
+{
+    "dependencies": [
+        "tmux"
+    ],
+    "install": [
+        "copy tmux.conf ~/.tmux.conf"
+    ]
+}
