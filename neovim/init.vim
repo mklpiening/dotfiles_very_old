@@ -25,6 +25,9 @@ call plug#begin('~/.config/nvim/plugged')
 " Autocomplete / Linting {
     Plug 'ycm-core/YouCompleteMe'
     let g:ycm_use_clangd = 0
+    let g:ycm_add_preview_to_completeopt = 0
+    let g:ycm_autoclose_preview_window_after_completion = 0
+    let g:ycm_autoclose_preview_window_after_insertion = 0
 " }
 
 
@@ -37,6 +40,10 @@ call plug#begin('~/.config/nvim/plugged')
 
         let NERDTreeShowHidden = 1
         let NERDTreeQuitOnOpen=1
+    " }
+
+    " Doxygen {
+        Plug 'vim-scripts/DoxygenToolkit.vim'
     " }
 
     " Airline {
@@ -68,11 +75,11 @@ call plug#begin('~/.config/nvim/plugged')
         
         let g:tmux_navigator_no_mappings = 1
 
-        nnoremap <silent> <c-Left> :TmuxNavigateLeft<cr>
-        nnoremap <silent> <c-Down> :TmuxNavigateDown<cr>
-        nnoremap <silent> <c-Up> :TmuxNavigateUp<cr>
-        nnoremap <silent> <c-Right> :TmuxNavigateRight<cr>
-        nnoremap <silent> <c-\> :TmuxNavigatePrevious<cr>
+        nnoremap <silent> <S-Left> :TmuxNavigateLeft<cr>
+        nnoremap <silent> <S-Down> :TmuxNavigateDown<cr>
+        nnoremap <silent> <S-Up> :TmuxNavigateUp<cr>
+        nnoremap <silent> <S-Right> :TmuxNavigateRight<cr>
+        nnoremap <silent> <S-\> :TmuxNavigatePrevious<cr>
     " }
 " } 
 
@@ -80,7 +87,15 @@ call plug#begin('~/.config/nvim/plugged')
 " Shortcuts {
     map <C-n> :NERDTreeToggle<cr>
 
+    map <C-p> :pclose<cr>
+   
+    function FormatFile()
+        let l:lines="all"
+        py3f /usr/share/clang/clang-format.py
+    endfunction
+
     map <C-l> :py3f /usr/share/clang/clang-format.py<cr>
+    map <C-K> :call FormatFile()<cr>
 
     map gh :YcmCompleter GoToDeclaration<cr>
     map gs :YcmCompleter GoToDefinition<cr>
