@@ -14,6 +14,9 @@ default_border pixel 1
 gaps inner 0
 gaps outer 0
 
+# hide borders when there is only one window open on the current workspace
+hide_edge_borders smart
+
 #####################
 ###  workspaces   ###
 #####################
