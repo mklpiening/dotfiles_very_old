@@ -9,20 +9,22 @@
         "rofi",
         "playerctl",
         "i3lock",
-	"ttf-droid"
+    	"ttf-droid"
     ],
     "install": [
+        "copy --su 20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf",
+        "copy --su 10-trackpad.conf /etc/X11/xorg.conf.d/10-trackpad.conf",
         "copy variables ~/.config/i3/config",
         "append config_base ~/.config/i3/config",
         "append shortcuts_applications ~/.config/i3/config",
         "append autostart ~/.config/i3/config",
 	"copy --su wallpaper /usr/local/bin/wallpaper",
         {
-            "question": "Install mac media shortcuts? (yes/no)",
-            "variable": "{mac_media_shortcuts}",
+            "question": "Install media shortcuts? (yes/no)",
+            "variable": "{media_shortcuts}",
             "answer": {
                 "yes": [
-                    "append shortcuts_media_mac ~/.config/i3/config"
+                    "append shortcuts_media ~/.config/i3/config"
                 ],
                 "no": []
             }

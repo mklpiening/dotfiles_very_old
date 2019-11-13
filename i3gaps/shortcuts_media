@@ -1,0 +1,20 @@
+########################
+###   mac sortcuts   ###
+########################
+
+# media
+bindsym XF86AudioRaiseVolume exec pactl set-sink-volume 0 +2%; exec pactl set-sink-mute 0 0
+bindsym XF86AudioLowerVolume exec pactl set-sink-volume 0 -2%; exec pactl set-sink-mute 0 0
+bindsym XF86AudioMute exec pactl set-sink-mute 0 toggle
+
+bindsym XF86AudioPlay exec playerctl play-pause
+bindsym XF86AudioNext exec playerctl next
+bindsym XF86AudioPrev exec playerctl previous
+
+# monitor brightness
+bindsym XF86MonBrightnessUp exec xbacklight -inc 2
+bindsym XF86MonBrightnessDown exec xbacklight -dec 2
+
+# keyboard brightness (currently not in use for x1 carbon 7)
+#bindsym XF86KbdBrightnessUp exec sudo keyboard-brightness + 
+#bindsym XF86KbdBrightnessDown exec sudo keyboard-brightness - 

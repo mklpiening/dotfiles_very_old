@@ -1,8 +1,0 @@
-[Unit]
-Description=handles pre suspend
-Before=sleep.target
-[Service]
-Type=simple
-ExecStart=/usr/local/bin/suspendHandler/preSuspend.sh
-[Install]
-WantedBy=sleep.target
