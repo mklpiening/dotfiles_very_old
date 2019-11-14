@@ -39,15 +39,6 @@
             }
         },
         {
-            "question": "Please enter the path to your lockscreen wallpaper.",
-            "variable": "{lockscreen_wallpaper}",
-            "answer": {
-                "*": [
-                    "replace ~/.config/i3/config [LOCKSCREEN_WALLPAPER] {lockscreen_wallpaper}"
-                ]
-            }
-        },
-        {
             "question": "what is the background color of your wallpaper (default 000000)?",
             "variable": "{lockscreen_color}",
             "answer": {

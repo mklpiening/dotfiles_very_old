@@ -6,4 +6,4 @@ set $mod Mod1
 
 set $term termite
 set $starter rofi -show run
-set $lockscreen i3lock -u -i [LOCKSCREEN_WALLPAPER] -c [LOCKSCREEN_COLOR]
+set $lockscreen i3lock -k -u --timecolor=ffffffff --timesize=48 --timestr="%H : %M" --datecolor=555555ff --datesize=24 --datestr="%d.%m.%Y" --datepos="w/2:h-16" -c 000000
