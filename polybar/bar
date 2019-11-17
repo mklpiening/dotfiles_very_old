@@ -47,8 +47,8 @@ inherit = bar/base
 height = 20
 
 font-0 = DroidSansRegular:size=10;0
-font-1 = DroidSansRegular:size=10;0
-font-2 = DroidSansRegular:size=10;0
+font-1 = NotoColorEmoji:size=10;0
+font-2 = NotoEmoji:size=10;0
 
 [bar/hidpi]
 inherit = bar/base
@@ -56,6 +56,6 @@ inherit = bar/base
 height = 28
 
 font-0 = DroidSansRegular:size=14;0
-font-1 = DroidSansRegular:size=14;0
-font-2 = DroidSansRegular:size=14;0
+font-1 = NotoColorEmoji:size=14;0
+font-2 = NotoEmoji:size=14;0
 
