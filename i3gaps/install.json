@@ -8,8 +8,9 @@
         "termite",
         "rofi",
         "playerctl",
-        "i3lock",
-    	"ttf-droid"
+        "i3lock-color",
+    	"ttf-droid",
+        "xorg-xbacklight"
     ],
     "install": [
         "copy --su 20-keyboard.conf /etc/X11/xorg.conf.d/20-keyboard.conf",
