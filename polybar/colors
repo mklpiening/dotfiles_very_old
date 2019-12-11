@@ -3,10 +3,14 @@
 ;##################
 
 [colors]
-background = #000000
-background-alt = #000000
+background = #000
+background-highlight = #dfdfdf
+background-urgent = #ff0000
+background-unfocused = #000
+background-alt = #555
+
 foreground = #dfdfdf
+foreground-highlight = #000
+foreground-urgent = #000
+foreground-unfocused = #555
 foreground-alt = #555
-primary = #61cab3
-secondary = #fc6e95
-alert = #fc6e95

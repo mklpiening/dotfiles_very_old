@@ -10,3 +10,6 @@ bindsym $mod+Return exec $term
 
 # run appstarter
 bindsym $mod+space exec $starter
+
+# toggle polybar
+bindsym $mod+Shift+i exec polybar-msg cmd toggle
