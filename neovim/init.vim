@@ -22,6 +22,39 @@ call plug#begin('~/.config/nvim/plugged')
 
 " Visual settings {
     set number
+
+    " Status bar {
+        function! GitBranch()
+          return system("git rev-parse --abbrev-ref HEAD 2>/dev/null | tr -d '\n'")
+        endfunction
+
+        function! StatuslineGit()
+          let l:branchname = GitBranch()
+          return strlen(l:branchname) > 0?'  '.l:branchname.' ':''
+        endfunction
+        
+        set laststatus=2
+
+        set statusline=
+
+        set statusline+=%#StatusLine#
+        set statusline+=%3.l
+        set statusline+=%#StatusLineNC#
+        set statusline+=\ /\ 
+        set statusline+=%#StatusLineNC#
+        set statusline+=%3.L
+        set statusline+=%#LineNr#
+        set statusline+=\ %{expand('%:h')}/
+        set statusline+=%#ModeMsg#
+        set statusline+=%t
+        set statusline+=%#MoreMsg#
+        set statusline+=\ %m
+        
+        set statusline+=%=
+        
+        set statusline+=%#StatusLineNC#
+        set statusline+=%{StatuslineGit()}
+    " }
 " }
 
 " Autocomplete / Linting {
@@ -49,10 +82,10 @@ call plug#begin('~/.config/nvim/plugged')
     " }
 
     " Airline {
-        Plug 'vim-airline/vim-airline'
-        Plug 'vim-airline/vim-airline-themes'
+       " Plug 'vim-airline/vim-airline'
+       " Plug 'vim-airline/vim-airline-themes'
 
-        let g:airline_theme='minimalist'
+       " let g:airline_theme='minimalist'
     " }
 
     " Syntax highlight {
@@ -66,6 +99,8 @@ call plug#begin('~/.config/nvim/plugged')
         Plug 'jeffkreeftmeijer/vim-dim'
         
         let g:load_doxygen_syntax=1
+
+        Plug 'sirtaj/vim-openscad'
     " }
    
     " Auto close {
