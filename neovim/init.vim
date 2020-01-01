@@ -42,7 +42,7 @@ call plug#begin('~/.config/nvim/plugged')
         set statusline+=%#StatusLineNC#
         set statusline+=\ /\ 
         set statusline+=%#StatusLineNC#
-        set statusline+=%3.L
+        set statusline+=%3.L\ 
         set statusline+=%#LineNr#
         set statusline+=\ %{expand('%:h')}/
         set statusline+=%#ModeMsg#
@@ -52,7 +52,7 @@ call plug#begin('~/.config/nvim/plugged')
         
         set statusline+=%=
         
-        set statusline+=%#StatusLineNC#
+        set statusline+=%#Title#
         set statusline+=%{StatuslineGit()}
     " }
 " }
