@@ -17,19 +17,3 @@ exec dunst
 
 # run compton
 exec compton --config ~/.config/compton/compton.conf
-
-
-# applications:
-# assign workspaces to programs
-assign [class="Evolution"] $ws1
-assign [class="messanger"] $ws2
-assign [class="Brave"] $ws3
-
-# evolution
-exec evolution
-
-# messanger
-exec messanger
-
-# brave
-exec brave
