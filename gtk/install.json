@@ -1,9 +1,10 @@
 {
-    "dependencies": [],
+    "dependencies": [
+        "materia-gtk-theme",
+        "papirus-icon-theme"
+    ],
     "install": [
-        "run mkdir -p ../tmp && cd ../tmp && git clone https://github.com/mklpiening/gray-motif.git",
-        "copy ../../tmp/gray-motif ~/.themes/gray-motif",
-
-        "copy settings.ini ~/.config/gtk-3.0/settings.ini"
+        "copy settings.ini ~/.config/gtk-3.0/settings.ini",
+        "copy gtkrc-2.0 ~/.gtkrc-2.0"
     ]
 }
