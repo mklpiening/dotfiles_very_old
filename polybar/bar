@@ -42,11 +42,11 @@ cursor-scroll = ns-resize
 [bar/normal]
 inherit = bar/base
 
-height = 20
+height = 18
 
-font-0 = DroidSansMono:size=10;0
-font-1 = NotoColorEmoji:size=10;0
-font-2 = NotoEmoji:size=10;0
+font-0 = DroidSansMono:size=9;0
+font-1 = NotoColorEmoji:size=9;0
+font-2 = NotoEmoji:size=9;0
 
 [bar/hidpi]
 inherit = bar/base
@@ -57,7 +57,12 @@ font-0 = DroidSansMono:size=13;0
 font-1 = NotoColorEmoji:size=13;0
 font-2 = NotoEmoji:size=13;0
 
-[bar/hidpiall]
+[bar/normal-all]
+inherit = bar/normal
+
+modules-left = i3-all
+
+[bar/hidpi-all]
 inherit = bar/hidpi
 
-modules-left = i3all
+modules-left = i3-all

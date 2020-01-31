@@ -33,7 +33,7 @@ label-urgent-foregorund = ${colors.foreground-urgent}
 label-urgent-background = ${colors.background-urgent}
 label-urgent-padding = 1
 
-[module/i3all]
+[module/i3-all]
 inherit = module/i3
 pin-workspaces = false
 
