@@ -7,6 +7,7 @@ type = internal/i3
 format = <label-state>
 index-sort = false
 wrapping-scroll = false
+pin-workspaces = true
 
 ; focused = Active workspace on focused monitor
 label-focused = %index%
@@ -31,6 +32,10 @@ label-urgent = %index%!
 label-urgent-foregorund = ${colors.foreground-urgent}
 label-urgent-background = ${colors.background-urgent}
 label-urgent-padding = 1
+
+[module/i3all]
+inherit = module/i3
+pin-workspaces = false
 
 [module/cpu]
 type = internal/cpu

@@ -4,13 +4,13 @@
 
 [colors]
 background = #000
-background-highlight = #dfdfdf
+background-highlight = #000000
 background-urgent = #ff0000
 background-unfocused = #000
 background-alt = #555
 
 foreground = #dfdfdf
-foreground-highlight = #000
+foreground-highlight = #ffffff
 foreground-urgent = #000
 foreground-unfocused = #555
 foreground-alt = #555

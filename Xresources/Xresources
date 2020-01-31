@@ -58,5 +58,5 @@ urxvt.color7:       #dcede5
 
 Xcursor.size: 16
 
-*.dpi: 96
-Xft.dpi: 96
+*.dpi: 88
+Xft.dpi: 88

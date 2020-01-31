@@ -13,3 +13,9 @@ bindsym $mod+space exec $starter
 
 # toggle polybar
 bindsym $mod+Shift+i exec polybar-msg cmd toggle
+
+# enable hidpi mode
+bindsym $mod+Shift+n exec scale-hidpi
+
+# enable notmal scaling mode
+bindsym $mod+n exec scale-normal
