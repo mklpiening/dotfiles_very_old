@@ -4,6 +4,6 @@
     ],
     "install": [
         "copy --su Malte.rasi /usr/share/rofi/themes/Malte.rasi",
-        "copy config ~/.config/rofi/config"
+        "copy config.rasi ~/.config/rofi/config.rasi"
     ]
 }
