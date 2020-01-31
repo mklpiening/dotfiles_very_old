@@ -3,4 +3,9 @@ configuration {
     font: "xft:DroidSansMono 10";
     theme: "Malte";
     combi-modi: "window,run,ssh";
+    width: 32;
+    columns: 1;
+    bw: 1;
+    terminal: "termite";
+    sidebar-mode: false;
 }
