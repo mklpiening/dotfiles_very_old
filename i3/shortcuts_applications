@@ -14,6 +14,9 @@ bindsym $mod+space exec $starter
 # toggle polybar
 bindsym $mod+Shift+i exec polybar-msg cmd toggle
 
+# screenshot
+bindsym $mod+Shift+s exec flameshot gui
+
 # enable hidpi mode
 bindsym $mod+Shift+n exec scale-hidpi
 
