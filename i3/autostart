@@ -17,3 +17,6 @@ exec dunst
 
 # run compton
 exec compton --config ~/.config/compton/compton.conf
+
+# detect current screen setup
+exec autorandr -c

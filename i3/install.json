@@ -57,11 +57,11 @@
             "answer": {
                 "yes": [
                     "replace ~/.config/i3/config [FONTSIZE] 10",
-                    "replace ~/.config/i3/config [BAR] hidpi"
+                    "replace ~/.config/i3/config [BAR] hidpi-all"
                 ],
                 "no": [
                     "replace ~/.config/i3/config [FONTSIZE] 8",
-                    "replace ~/.config/i3/config [BAR] normal"
+                    "replace ~/.config/i3/config [BAR] normal-all"
                 ]
             }
         }
