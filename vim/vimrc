@@ -21,6 +21,9 @@
         Plug 'vim-airline/vim-airline-themes'
     " }
 
+    Plug 'terryma/vim-smooth-scroll'
+    Plug 'jeetsukumaran/vim-buffergator'
+
     Plug 'noahfrederick/vim-noctu'
 
     call plug#end()
@@ -68,9 +71,7 @@
     " }
 
     " Status Bar {
-       " let g:airline_theme='distinguished'
-       " let g:airline_theme='bubblegum'
-       let g:airline_theme='monochrome'
+       let g:airline_theme='distinguished'
     " }
 " }
 
@@ -92,11 +93,11 @@
 " Seamless tmux navigation {
     let g:tmux_navigator_no_mappings = 1
 
-    nnoremap <silent> <S-Left> :TmuxNavigateLeft<cr>
-    nnoremap <silent> <S-Down> :TmuxNavigateDown<cr>
-    nnoremap <silent> <S-Up> :TmuxNavigateUp<cr>
-    nnoremap <silent> <S-Right> :TmuxNavigateRight<cr>
-    nnoremap <silent> <S-\> :TmuxNavigatePrevious<cr>
+    nnoremap <silent> <C-h> :TmuxNavigateLeft<cr>
+    nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
+    nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
+    nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
+    nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 " }
 
 " Shortcuts {
@@ -118,8 +119,8 @@
             py3f /usr/share/clang/clang-format.py
         endfunction
 
-        map <C-l> :py3f /usr/share/clang/clang-format.py<cr>
-        map <C-K> :call FormatFile()<cr>
+        map <C-i> :py3f /usr/share/clang/clang-format.py<cr>
+        map <C-S-i> :call FormatFile()<cr>
     " }
 
     map r R
@@ -136,4 +137,15 @@
 
         noremap x "+x 
     " }
+    
+    " Smooth Scrolling {  
+        noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<cr>
+        noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<cr>
+        noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<cr>
+        noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<cr>
+    " }
+
+    " Buffergator {
+       map <C-m> :BuffergatorToggle<cr> 
+    " } 
 " }
