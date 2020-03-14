@@ -1,0 +1,139 @@
+" Plugins {
+    call plug#begin('~/.vim/plugged')
+ 
+    Plug 'ycm-core/YouCompleteMe'
+    Plug 'scrooloose/nerdtree'
+    Plug 'christoomey/vim-tmux-navigator'
+    Plug 'vim-scripts/DoxygenToolkit.vim'
+ 
+    " Syntax highlighting {
+        Plug 'octol/vim-cpp-enhanced-highlight'
+        Plug 'vim-python/python-syntax'
+        Plug 'sirtaj/vim-openscad'
+    " }
+    
+    " Auto close {
+        Plug 'Raimondi/delimitMate'
+    " }
+
+    " Status Bar {
+        Plug 'vim-airline/vim-airline'
+        Plug 'vim-airline/vim-airline-themes'
+    " }
+
+    Plug 'noahfrederick/vim-noctu'
+
+    call plug#end()
+" }
+
+" General settings {
+    set mouse=a
+
+    set ignorecase
+    set smartcase
+    set hlsearch
+    set incsearch
+
+    set expandtab
+    set tabstop=4
+    set shiftwidth=4
+" }
+
+" Visual settings {
+    colorscheme noctu
+    
+    set number
+
+    " Current Line {
+        set cursorline
+        :hi CursorLine   cterm=bold
+        :hi CursorLineNr cterm=bold ctermfg=black ctermbg=white
+        :hi LineNr       ctermfg=grey
+    " }
+
+    " Syntax highlighting {
+        " C++ {
+            let g:cpp_class_scope_highlight = 1
+            let g:cpp_member_variable_highlight = 1
+            let g:cpp_class_decl_highlight = 1
+            let g:cpp_experimental_simple_template_highlight = 1
+            let g:cpp_concepts_highlight = 1
+ 
+            let g:load_doxygen_syntax = 1
+        " }
+
+        " python {
+            let g:python_highlight_all = 1
+        " }
+    " }
+
+    " Status Bar {
+       " let g:airline_theme='distinguished'
+       " let g:airline_theme='bubblegum'
+       let g:airline_theme='monochrome'
+    " }
+" }
+
+" Autocomplete / Linting {
+    let g:ycm_use_clangd = 0
+    let g:ycm_add_preview_to_completeopt = 0
+    let g:ycm_autoclose_preview_window_after_completion = 0
+    let g:ycm_autoclose_preview_window_after_insertion = 0
+" }
+
+" Nerdtree {
+    let NERDTreeDirArrowExpandable = "+"
+    let NERDTreeDirArrowCollapsible = "-"
+
+    let NERDTreeShowHidden = 1
+    let NERDTreeQuitOnOpen=1
+" }
+
+" Seamless tmux navigation {
+    let g:tmux_navigator_no_mappings = 1
+
+    nnoremap <silent> <S-Left> :TmuxNavigateLeft<cr>
+    nnoremap <silent> <S-Down> :TmuxNavigateDown<cr>
+    nnoremap <silent> <S-Up> :TmuxNavigateUp<cr>
+    nnoremap <silent> <S-Right> :TmuxNavigateRight<cr>
+    nnoremap <silent> <S-\> :TmuxNavigatePrevious<cr>
+" }
+
+" Shortcuts {
+    " Nerdtree {
+        map <C-n> :NERDTreeToggle<cr>
+    " }
+
+    " YouCompleteMe {
+        map <C-p> :pclose<cr>
+
+        map gh :YcmCompleter GoToDeclaration<cr>
+        map gs :YcmCompleter GoToDefinition<cr>
+        map gi :YcmCompleter GoToInclude<cr>
+    " }
+ 
+    " ClangFormat {
+        function FormatFile()
+            let l:lines="all"
+            py3f /usr/share/clang/clang-format.py
+        endfunction
+
+        map <C-l> :py3f /usr/share/clang/clang-format.py<cr>
+        map <C-K> :call FormatFile()<cr>
+    " }
+
+    map r R
+
+    " Copy to unnamedplus register {
+        " the default register stays unchanged to not 
+        " override register when deleting text 
+
+        noremap y "+y
+        noremap yy "+yy
+
+        noremap p "+p 
+        noremap P "+P 
+
+        noremap x "+x 
+    " }
+" }
