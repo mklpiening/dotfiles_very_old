@@ -22,7 +22,6 @@
     " }
 
     Plug 'terryma/vim-smooth-scroll'
-    Plug 'jeetsukumaran/vim-buffergator'
 
     Plug 'noahfrederick/vim-noctu'
 
@@ -123,7 +122,7 @@
         map <C-S-i> :call FormatFile()<cr>
     " }
 
-    map r R
+    " map r R
 
     " Copy to unnamedplus register {
         " the default register stays unchanged to not 
@@ -139,13 +138,9 @@
     " }
     
     " Smooth Scrolling {  
-        noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 0, 2)<cr>
-        noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 0, 2)<cr>
-        noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 0, 4)<cr>
-        noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 0, 4)<cr>
+        noremap <silent> <c-u> :call smooth_scroll#up(&scroll, 5, 2)<cr>
+        noremap <silent> <c-d> :call smooth_scroll#down(&scroll, 5, 2)<cr>
+        noremap <silent> <c-b> :call smooth_scroll#up(&scroll*2, 5, 4)<cr>
+        noremap <silent> <c-f> :call smooth_scroll#down(&scroll*2, 5, 4)<cr>
     " }
-
-    " Buffergator {
-       map <C-m> :BuffergatorToggle<cr> 
-    " } 
 " }
