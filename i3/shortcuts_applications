@@ -22,3 +22,7 @@ bindsym $mod+Shift+n exec scale-hidpi
 
 # enable notmal scaling mode
 bindsym $mod+n exec scale-normal
+
+# set workspace as messanger workspace
+bindsym $mod+Shift+m exec i3-msg 'layout tabbed' & whatsapp-nativefier-dark & telegram-desktop & rocketchat-desktop & evolution
+
