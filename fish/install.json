@@ -1,0 +1,17 @@
+{
+    "dependencies": [
+        "fish",
+        "curl"
+    ],
+    "install": [
+        "copy conf.d/login.fish ~/.config/fish/conf.d/login.fish",
+        "copy conf.d/theme-config.fish ~/.config/fish/conf.d/theme-config.fish",
+        "copy conf.d/vi-mode.fish ~/.config/fish/conf.d/vi-mode.fish",
+        
+        "copy fish_variables ~/.config/fish/fish_variables",
+        
+        "run curl -L https://get.oh-my.fish | fish",
+
+        "run chsh -s /bin/fish"
+    ]
+}
