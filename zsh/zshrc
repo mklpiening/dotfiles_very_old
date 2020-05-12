@@ -19,17 +19,6 @@ autoload -Uz compinit
 compinit
 # End of lines added by compinstall
 
-# ROS stuff
-ROSVERSION="melodic" 
+# qt color theme
+export QT_QPA_PLATFORMTHEME=qt5ct
 
-# check for ros installation
-if [ -f "/opt/ros/$ROSVERSION/setup.zsh" ]
-then
-    source /opt/ros/$ROSVERSION/setup.zsh
-fi
-
-# check for local workspace
-if [ -f "devel/setup.zsh" ]
-then
-    source devel/setup.zsh
-fi

@@ -1,6 +1,7 @@
 {
     "dependencies": [
-	"noto-fonts-emoji"
+	    "noto-fonts-emoji",
+        "ttf-dejavu"
     ],
     "install": [
         "copy fonts.conf ~/.config/fontconfig/fonts.conf"

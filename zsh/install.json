@@ -7,6 +7,16 @@
         "run sh -c \"$(wget https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh -O -)\"",
 
         "copy zshrc ~/.zshrc",
+        {
+            "question": "Would you like to use ROS?",
+            "variable": "{use_ros}",
+            "answer": {
+                "yes": [
+                    "append zshrc-ros ~/.zshrc"
+                ],
+                "no": []
+            }
+        },
         "run git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting",
         "run git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions",
         "run chsh -s /bin/zsh"

@@ -1,0 +1,16 @@
+# ROS stuff
+ROS_BASE_DIR="/bedrock/strata/ubuntu/opt/ros"
+ROSVERSION="melodic" 
+
+# restore path after sourcing ros to let bedrock linux manage the cross stratum bins 
+# (/opt/ros/$ROSVERSION/bin needs to be added to [cross-bin] -> in your bedrock config)
+PATH_BAK=$PATH
+source $ROS_BASE_DIR/$ROSVERSION/setup.zsh
+
+# check for local workspace
+if [ -f ".catkin_workspace" ]
+then
+    echo $fg[fg-grey] "loading catkin workspace ..."
+    source devel/setup.zsh
+fi
+export PATH=$PATH_BAK
