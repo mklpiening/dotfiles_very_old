@@ -2,7 +2,8 @@
     "dependencies": [
         "materia-gtk-theme",
         "papirus-icon-theme",
-        "qt5ct"
+        "qt5ct",
+        "qt5-styleplugins"
     ],
     "install": [
         "copy settings.ini ~/.config/gtk-3.0/settings.ini",
