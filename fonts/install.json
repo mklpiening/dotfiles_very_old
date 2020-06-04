@@ -1,7 +1,8 @@
 {
     "dependencies": [
 	    "noto-fonts-emoji",
-        "ttf-dejavu"
+        "ttf-dejavu",
+        "nerd-fonts-droid-sans-mono"
     ],
     "install": [
         "copy fonts.conf ~/.config/fontconfig/fonts.conf"

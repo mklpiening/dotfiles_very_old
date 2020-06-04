@@ -25,6 +25,13 @@
     Plug 'terryma/vim-smooth-scroll'
 
     Plug 'noahfrederick/vim-noctu'
+    
+    Plug 'wincent/command-t', {
+    \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
+    \ }
+
+    Plug 'ryanoasis/vim-devicons'
+    set encoding=UTF-8
 
     call plug#end()
 " }
@@ -61,8 +68,10 @@
     " }
 
     " Status Bar {
-       let g:airline_theme='distinguished'
+       let g:airline_theme='base16'
     " }
+    
+    autocmd VimLeave * call system("xsel -ib", getreg('+'))
 " }
 
 " Clang format {
@@ -159,7 +168,7 @@
 
     " Add status line support, for integration with other plugin, checkout `:h coc-status`
     set statusline^=%{coc#status()}%{get(b:,'coc_current_function','')}
-
+    
     " keep delimitMate enables
     imap <expr> <cr> pumvisible() ? "\<C-y>" : "\<C-g>u\<Plug>delimitMateCR"
 " }
@@ -179,7 +188,7 @@
     nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
     nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
     nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-    nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+   nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
 " }
 
 " Shortcuts {
