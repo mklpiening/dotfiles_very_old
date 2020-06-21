@@ -1,6 +1,6 @@
 {
     "dependencies": [
-        "i3",
+        "i3-gaps",
         "redshift",
         "polybar",
         "feh",
