@@ -1,0 +1,41 @@
+/*no padding to top of window*/
+#tabs-container {
+	padding-top: 0 !important;
+	border-bottom-width: 0 !important;
+}
+
+/*black bar on bottom*/
+.toolbar {
+	background-color: black !important;
+	color: white;
+	box-shadow: none !important;
+}
+
+/*set color of bottom right popup extensions button to white*/
+.extensionPopupIcons {
+	color: white;
+}
+
+/*top left burger button*/
+button.vivaldi {
+	height: 32px !important;
+	background-color: black !important;
+}
+
+.burger-icon > svg {
+	height: 15px !important;
+	color: #aaaaaa;
+}
+
+/*remove top right history and sync buttons as well as new tab button*/
+.synced-tabs-button,
+.toggle-trash,
+.newtab {
+	visibility: hidden;
+}
+
+/*remove border from addressfield*/
+.addressfield {
+	border: none;
+	box-shadow: none !important;
+}
