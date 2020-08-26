@@ -8,9 +8,11 @@
     Plug 'rhysd/vim-clang-format'
  
     " Syntax highlighting {
-        Plug 'jackguo380/vim-lsp-cxx-highlight'
+        "Plug 'jackguo380/vim-lsp-cxx-highlight'
         Plug 'vim-python/python-syntax'
         Plug 'sirtaj/vim-openscad'
+
+        Plug 'octol/vim-cpp-enhanced-highlight'
     " }
     
     " Auto close {
@@ -30,7 +32,7 @@
     \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
     \ }
 
-    Plug 'ryanoasis/vim-devicons'
+    " Plug 'ryanoasis/vim-devicons'
     set encoding=UTF-8
 
     call plug#end()
@@ -64,6 +66,11 @@
     " Syntax highlighting {
         " python {
             let g:python_highlight_all = 1
+        " }
+
+        " c++ {
+            let g:cpp_class_scope_highlight = 1
+            let g:cpp_member_variable_highlight = 1
         " }
     " }
 

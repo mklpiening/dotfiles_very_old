@@ -1,9 +1,10 @@
 {
     "dependencies": [
-        "gvim"
+        "nvim",
+        "ccls"
     ],
     "install": [
-        "run curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim",
-        "copy vimrc ~/.vimrc"
+        "run curl -fLo '${XDG_DATA_HOME:-$HOME/.local/share}'/nvim/site/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim",
+        "copy init.vim ~/.config/nvim/init.vim"
     ]
 }
