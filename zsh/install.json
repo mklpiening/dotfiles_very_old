@@ -19,6 +19,7 @@
         },
         "run git clone https://github.com/zsh-users/zsh-syntax-highlighting.git ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-syntax-highlighting",
         "run git clone https://github.com/zsh-users/zsh-autosuggestions ${ZSH_CUSTOM:-~/.oh-my-zsh/custom}/plugins/zsh-autosuggestions",
-        "run chsh -s /bin/zsh"
+        "run chsh -s /bin/zsh",
+        "run wget https://raw.githubusercontent.com/mklpiening/oh_my_zsh_theme/master/malte.zsh-theme -P ~/.oh-my-zsh/themes/"
     ]
 }

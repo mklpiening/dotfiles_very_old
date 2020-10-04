@@ -1,6 +1,6 @@
 export ZSH="/home/malte/.oh-my-zsh"
 
-ZSH_THEME="bureau"
+ZSH_THEME="malte"
 
 plugins=(
   git
@@ -11,14 +11,35 @@ plugins=(
 source $ZSH/oh-my-zsh.sh
 
 ZSH_AUTOSUGGEST_HIGHLIGHT_STYLE='fg=8'
+# bindkey '^ ' autosuggest-accept
 
-# The following lines were added by compinstall
 zstyle :compinstall filename '/home/malte/.zshrc'
 
+# autocomplete
 autoload -Uz compinit
 compinit
-# End of lines added by compinstall
+_comp_options+=(globdots)
+
+# vim bindings
+bindkey -v
+
+# visualize insert or command mode using cursor style
+# default line
+echo -ne '\e[6 q'
+function zle-keymap-select {
+  if [[ ${KEYMAP} == vicmd ]]; then
+    # block for command
+    echo -ne '\e[2 q'
+  else
+    # line for insert
+    echo -ne '\e[6 q'
+  fi
+
+  # change prompt style
+  #PROMPT='${${KEYMAP/vicmd/> $_LIBERTY_NORMAL }/(main|viins)/> $_LIBERTY_INSERT }'
+  #zle reset-prompt
+}
+zle -N zle-keymap-select
 
 # qt color theme
 export QT_QPA_PLATFORMTHEME=qt5ct
-
