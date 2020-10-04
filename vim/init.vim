@@ -1,10 +1,15 @@
 " Plugins {
     call plug#begin('~/.vim/plugged')
+
+    Plug 'scrooloose/nerdtree'
+    Plug 'ryanoasis/vim-devicons'
+
+    Plug 'christoomey/vim-tmux-navigator'
  
     Plug 'neoclide/coc.nvim', {'branch': 'release'}
-    Plug 'scrooloose/nerdtree'
-    Plug 'christoomey/vim-tmux-navigator'
     Plug 'vim-scripts/DoxygenToolkit.vim'
+    Plug 'lervag/vimtex'
+
     Plug 'rhysd/vim-clang-format'
  
     " Syntax highlighting {
@@ -28,11 +33,8 @@
 
     Plug 'noahfrederick/vim-noctu'
     
-    Plug 'wincent/command-t', {
-    \   'do': 'cd ruby/command-t/ext/command-t && ruby extconf.rb && make'
-    \ }
+    Plug 'kien/ctrlp.vim'
 
-    " Plug 'ryanoasis/vim-devicons'
     set encoding=UTF-8
 
     call plug#end()
@@ -75,17 +77,19 @@
     " }
 
     " Status Bar {
-       let g:airline_theme='base16'
+        let g:airline_theme='base16color'
+        let g:airline#extensions#tabline#formatter = 'unique_tail'
+        let g:airline#extensions#tabline#enabled = 1
     " }
     
-    autocmd VimLeave * call system("xsel -ib", getreg('+'))
+    " autocmd VimLeave * call system("xsel -ib", getreg('+'))
 " }
 
 " Clang format {
     let g:clang_format#detect_style_file = 1
 " }
 
-" Autocomplete / Linting {
+" Autocomplete / Linting (Coc) {
     " if hidden is not set, TextEdit might fail.
     set hidden
 
@@ -195,7 +199,15 @@
     nnoremap <silent> <C-j> :TmuxNavigateDown<cr>
     nnoremap <silent> <C-k> :TmuxNavigateUp<cr>
     nnoremap <silent> <C-l> :TmuxNavigateRight<cr>
-   nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+    nnoremap <silent> <C-\> :TmuxNavigatePrevious<cr>
+" }
+
+" CtrlP {
+    let g:ctrlp_cmd = "CtrlPBuffer"
+" }
+    
+" vimtex {
+    let g:tex_flavor = 'latex'
 " }
 
 " Shortcuts {
@@ -214,8 +226,6 @@
     " ClangFormat {
         map <C-S-i> :ClangFormat<cr>
     " }
-
-    " map r R
 
     " Copy to unnamedplus register {
         " the default register stays unchanged to not 
