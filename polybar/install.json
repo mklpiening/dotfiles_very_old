@@ -9,16 +9,23 @@
         "append modules ~/.config/polybar/config",
         "append settings ~/.config/polybar/config",
         {
-            "question": "Is this a desktop or notebook? (desktop/notebook)",
-            "variable": "{device_type}",
+            "question": "What is the name of your WiFi interface",
+            "variable": "{wifi}",
             "answer": {
-                "desktop": [
-                    "replace ~/.config/polybar/config [MODULES-RIGHT] memory%20cpu"
-                ],
-                "notebook": [
-                    "replace ~/.config/polybar/config [MODULES-RIGHT] pulseaudio%20memory%20cpu%20battery%20wlan"
+                "*": [
+                    "replace ~/.config/polybar/config [WIFI] {wifi}"
+                ]
+            }
+        },
+        {
+            "question": "What is the name of your Ethernet interface",
+            "variable": "{ethernet}",
+            "answer": {
+                "*": [
+                    "replace ~/.config/polybar/config [ETHERNET] {ethernet}"
                 ]
             }
         }
+
     ]
 }

@@ -53,7 +53,7 @@ label = %percentage_used%%
 
 [module/wlan]
 type = internal/network
-interface = wlp0s20f3
+interface = [WIFI]
 interval= 3.0
 
 format-connected-prefix = "WLAN "
@@ -73,7 +73,7 @@ ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
-interface = ethdamme
+interface = [ETHERNET]
 interval = 3.0
 
 format-connected-prefix = "ETH "
