@@ -27,9 +27,9 @@ padding-right = 1
 module-margin-left = 1
 module-margin-right = 0
 
-modules-left = i3
-modules-center = date 
-modules-right = pulseaudio memory cpu battery wlan
+modules-left = date pulseaudio
+modules-center = i3 
+modules-right = memory cpu battery eth wlan
 
 tray-position = none
 tray-padding = 0
@@ -44,25 +44,26 @@ inherit = bar/base
 
 height = 18
 
-font-0 = DroidSansMono:size=9;0
-font-1 = NotoColorEmoji:size=9;0
-font-2 = NotoEmoji:size=9;0
+font-0 = DroidSansMono:size=10;0
+font-1 = NotoColorEmoji:size=10;0
+font-2 = NotoEmoji:size=10;0
 
 [bar/hidpi]
 inherit = bar/base
 
 height = 32
 
-font-0 = DroidSansMono:size=13;0
-font-1 = NotoColorEmoji:size=13;0
-font-2 = NotoEmoji:size=13;0
+font-0 = DroidSansMono:size=11;0
+font-1 = NotoColorEmoji:size=11;0
+font-2 = NotoEmoji:size=11;0
 
 [bar/normal-all]
 inherit = bar/normal
 
-modules-left = i3-all
+modules-center = i3-all
 
 [bar/hidpi-all]
 inherit = bar/hidpi
 
-modules-left = i3-all
+modules-center = i3-all
+

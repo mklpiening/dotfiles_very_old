@@ -4,7 +4,7 @@
 
 [module/i3]
 type = internal/i3
-format = <label-state>
+format = [<label-state>]
 index-sort = false
 wrapping-scroll = false
 pin-workspaces = true
@@ -64,23 +64,23 @@ format-connected = <label-connected> <ramp-signal>
 
 format-disconnected = 
 
-ramp-signal-0 = |
-ramp-signal-1 = ||
-ramp-signal-2 = |||
-ramp-signal-3 = ||||
-ramp-signal-4 = |||||
+ramp-signal-0 = [1]
+ramp-signal-1 = [2]
+ramp-signal-2 = [3]
+ramp-signal-3 = [4]
+ramp-signal-4 = [5]
 ramp-signal-foreground = ${colors.foreground}
 
 [module/eth]
 type = internal/network
-interface = enp0s31f6
+interface = ethdamme
 interval = 3.0
 
 format-connected-prefix = "ETH "
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 label-connected-foreground = ${colors.foreground}
-format-connected = <label-connected> <ramp-signal>
+format-connected = <label-connected>
 
 format-disconnected =
 
@@ -98,13 +98,15 @@ label = %time% %date%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
+format-volume-prefix = "VOL "
+format-volume-prefix-foreground = ${colors.foreground-alt}
+format-volume = <label-volume>
 label-volume = %percentage%%
 label-volume-foreground = ${root.foreground}
 
 label-muted = 
 
-bar-volume-width = 10
+bar-volume-width = 0
 bar-volume-foreground-0 = ${colors.foreground}
 bar-volume-foreground-1 = ${colors.foreground}
 bar-volume-foreground-2 = ${colors.foreground}
@@ -115,7 +117,7 @@ bar-volume-foreground-6 = ${colors.background-urgent}
 bar-volume-gradient = true
 bar-volume-indicator = 
 bar-volume-indicator-font = 
-bar-volume-fill = |
+bar-volume-fill = 
 bar-volume-fill-font = 
 bar-volume-empty = 
 bar-volume-empty-font = 
@@ -139,3 +141,4 @@ format-discharging = <label-discharging>
 
 format-full-prefix = BAT
 format-full-prefix-foreground = ${colors.foreground-alt}
+
