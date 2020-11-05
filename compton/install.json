@@ -1,8 +1,0 @@
-{
-    "dependencies": [
-        "compton"
-    ],
-    "install": [
-        "copy compton.conf ~/.config/compton/compton.conf"
-    ]
-}

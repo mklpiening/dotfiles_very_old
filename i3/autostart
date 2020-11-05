@@ -16,7 +16,14 @@ exec wallpaper
 exec dunst
 
 # run compton
-exec compton --config ~/.config/compton/compton.conf
+exec picom --config ~/.config/picom/picom.conf
 
 # detect current screen setup
 exec autorandr -c
+
+# run autorandr
+exec autorandr -l default && sleep 1 && autorandr -c
+
+# battery warning
+exec --no-startup-id i3-battery-popup -L 10 -n -m "Charge your f***ing battery!"
+

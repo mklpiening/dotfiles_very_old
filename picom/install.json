@@ -1,0 +1,8 @@
+{
+    "dependencies": [
+        "picom"
+    ],
+    "install": [
+        "copy picom.conf ~/.config/picom/picom.conf"
+    ]
+}

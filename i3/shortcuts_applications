@@ -24,5 +24,8 @@ bindsym $mod+Shift+n exec scale-hidpi
 bindsym $mod+n exec scale-normal
 
 # set workspace as messanger workspace
-bindsym $mod+Shift+m exec i3-msg 'layout tabbed' & whatsapp-nativefier-dark & telegram-desktop & rocketchat-desktop & evolution
+bindsym $mod+Shift+m exec i3-msg 'layout tabbed' & telegram-desktop & evolution & ferdi
+
+# update display config
+bindsym $mod+Control+d exec autorandr -c -f
 

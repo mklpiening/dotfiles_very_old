@@ -15,6 +15,9 @@ bindsym XF86AudioPrev exec playerctl previous
 bindsym XF86MonBrightnessUp exec xbacklight -inc 2
 bindsym XF86MonBrightnessDown exec xbacklight -dec 2
 
+bindsym Shift+XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym Shift+XF86MonBrightnessDown exec xbacklight -dec 10
+
 # keyboard brightness (currently not in use for x1 carbon 7)
 #bindsym XF86KbdBrightnessUp exec sudo keyboard-brightness + 
 #bindsym XF86KbdBrightnessDown exec sudo keyboard-brightness - 
